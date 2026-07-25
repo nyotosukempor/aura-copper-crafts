@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "app",
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_updateview",
+      "label": "updateView()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L122",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_calculate",
+      "label": "calculate()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L207",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rendercatalog",
+      "label": "renderCatalog()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L256",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app",
+      "target": "app_updateview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_calculate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L207",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_rendercatalog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L256",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

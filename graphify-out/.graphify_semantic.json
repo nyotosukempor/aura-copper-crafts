@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "doc:.agents/AGENTS.md",
+      "label": "AGENTS.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/AGENTS.md",
+      "description": "Agent skill or documentation file AGENTS.md"
+    },
+    {
+      "id": "doc:.agents/skills/interactive-3d-customizer/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/interactive-3d-customizer/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/kerajinan-tembaga-builder/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/kerajinan-tembaga-builder/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail-audit/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-audit/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail-debt/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-debt/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail-gain/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-gain/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail-help/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-help/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail-review/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-review/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:.agents/skills/ponytail/SKILL.md",
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md"
+    },
+    {
+      "id": "doc:index.html",
+      "label": "index.html",
+      "type": "DOCUMENT",
+      "source_location": "index.html",
+      "description": "Agent skill or documentation file index.html"
+    }
+  ],
+  "edges": [],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

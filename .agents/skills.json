@@ -1,0 +1,17 @@
+{
+  "entries": [
+    { "path": ".agents/skills/kerajinan-tembaga-builder" },
+    { "path": ".agents/skills/interactive-3d-customizer" },
+    { "path": ".agents/skills/ui-animation-enhancer" },
+    { "path": ".agents/skills/whatsapp-order-generator" },
+    { "path": ".agents/skills/product-catalog-manager" },
+    { "path": ".agents/skills/design-system-tokens" },
+    { "path": ".agents/skills/seo-meta-optimizer" },
+    { "path": ".agents/skills/ponytail" },
+    { "path": ".agents/skills/ponytail-audit" },
+    { "path": ".agents/skills/ponytail-debt" },
+    { "path": ".agents/skills/ponytail-gain" },
+    { "path": ".agents/skills/ponytail-help" },
+    { "path": ".agents/skills/ponytail-review" }
+  ]
+}

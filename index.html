@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Copper & Brass Crafts | Mahakarya Kerajinan Tembaga & Kuningan Custom</title>
+    <meta name="description" content="Produsen dan Pengrajin Kerajinan Tembaga & Kuningan Premium Boyolali. Melayani Custom Order Bak Mandi Tembaga, Lampu Gantung Nabawi, Relief Dinding, Kubah Masjid, dan Luxury Home Decor.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS - Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Swiper.js - Premium Slider/Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Tippy.js - Tooltips (theme) -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/translucent.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Glowing Background Glows -->
+    <div class="bg-ambient-glow glow-1"></div>
+    <div class="bg-ambient-glow glow-2"></div>
+    <div class="bg-ambient-glow glow-3"></div>
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="site-header">
+        <div class="container header-container">
+            <a href="#hero" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">AURA<span class="highlight">COPPER</span></span>
+                    <span class="brand-sub">LUXURY HANDCRAFTED METALS</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Beranda</a></li>
+                    <li><a href="#customizer" class="nav-link">Studio Customizer</a></li>
+                    <li><a href="#calculator" class="nav-link">Kalkulator Harga</a></li>
+                    <li><a href="#katalog" class="nav-link">Katalog Produk</a></li>
+                    <li><a href="#galeri" class="nav-link">Galeri</a></li>
+                    <li><a href="#proses" class="nav-link">Proses Tempa</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#calculator" class="btn btn-secondary btn-sm nav-btn-custom">
+                    <i class="fa-solid fa-sliders"></i> Estimasi Custom
+                </a>
+                <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20konsultasi%20kerajinan%20tembaga" target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <canvas id="particle-canvas"></canvas>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-pill">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">Direct Manufacturer Boyolali • Pure Copper 99.9%</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Seni Tempa Logam Murni <br>
+                        <span class="text-gradient">Tembaga & Kuningan</span> High-End
+                    </h1>
+                    <p class="hero-description">
+                        Kami mewujudkan karya seni arsitektur dan interior kelas dunia dari lembaran tembaga & kuningan murni. Dari Bak Mandi Tembaga, Chandelier Masjid Nabawi, hingga Relief Dinding Kustom dengan kualitas ekspor.
+                    </p>
+                    
+                    <div class="hero-cta-group">
+                        <a href="#customizer" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-cubes"></i> Coba Customizer Studio
+                        </a>
+                        <a href="#katalog" class="btn btn-outline btn-lg">
+                            <i class="fa-solid fa-images"></i> Jelajahi Katalog
+                        </a>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div class="metric-item">
+                            <span class="metric-number" data-target="15">0</span><span class="metric-plus">+</span>
+                            <span class="metric-label">Tahun Pengalaman</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-number" data-target="1200">0</span><span class="metric-plus">+</span>
+                            <span class="metric-label">Proyek Selesai</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-number" data-target="100">0</span><span class="metric-plus">%</span>
+                            <span class="metric-label">Tembaga Murni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-card-glow"></div>
+                    <div class="hero-craft-showcase">
+                        <div class="craft-badge">Featured Craftsmanship</div>
+                        <div class="visual-svg-wrapper" id="hero-svg-container">
+                            <!-- Dynamic SVG 3D-like copper bathtub preview -->
+                            <svg viewBox="0 0 500 380" class="hero-svg-bathtub" id="hero-interactive-svg">
+                                <defs>
+                                    <linearGradient id="copGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#f59e0b"/>
+                                        <stop offset="35%" stop-color="#d97736"/>
+                                        <stop offset="70%" stop-color="#b85d1c"/>
+                                        <stop offset="100%" stop-color="#54230c"/>
+                                    </linearGradient>
+                                    <linearGradient id="innerCop" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#fef3c7"/>
+                                        <stop offset="40%" stop-color="#e89d6c"/>
+                                        <stop offset="100%" stop-color="#7c2d12"/>
+                                    </linearGradient>
+                                    <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+                                    </radialGradient>
+                                    <pattern id="hammerPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <circle cx="5" cy="5" r="2.5" fill="#3c1505" opacity="0.35"/>
+                                        <circle cx="15" cy="15" r="2.5" fill="#3c1505" opacity="0.35"/>
+                                        <circle cx="15" cy="5" r="1.5" fill="#fef3c7" opacity="0.25"/>
+                                        <circle cx="5" cy="15" r="1.5" fill="#fef3c7" opacity="0.25"/>
+                                    </pattern>
+                                </defs>
+                                
+                                <ellipse cx="250" cy="330" rx="190" ry="25" fill="url(#glowG)"/>
+                                
+                                <!-- Bathtub Base & Feet -->
+                                <path d="M120 300 L110 330 M380 300 L390 330" stroke="#d97736" stroke-width="8" stroke-linecap="round"/>
+                                
+                                <!-- Tub Body Outer Shell -->
+                                <path d="M60 160 C50 250, 110 300, 250 300 C390 300, 450 250, 440 160 C440 160, 420 220, 250 220 C80 220, 60 160, 60 160 Z" fill="url(#copGrad)"/>
+                                <path d="M60 160 C50 250, 110 300, 250 300 C390 300, 450 250, 440 160 C440 160, 420 220, 250 220 C80 220, 60 160, 60 160 Z" fill="url(#hammerPattern)"/>
+                                
+                                <!-- Rim Rim Back -->
+                                <ellipse cx="250" cy="160" rx="190" ry="40" fill="url(#copGrad)" stroke="#fef3c7" stroke-width="2"/>
+                                <!-- Tub Inner Hollow -->
+                                <ellipse cx="250" cy="165" rx="175" ry="32" fill="url(#innerCop)"/>
+                                
+                                <!-- Water/Shine effect inside -->
+                                <ellipse cx="250" cy="170" rx="150" ry="22" fill="#0d0d11" opacity="0.4"/>
+                                <path d="M100 160 Q 250 200 400 160" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="visual-caption">
+                            <span class="caption-title">Copper Bathtub Roll-Top Hammered</span>
+                            <span class="caption-desc">Ukuran Custom • Finis Patina Tempa Tangan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Kustomizer Section -->
+        <section id="customizer" class="section customizer-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">INTERACTIVE STUDIO</span>
+                    <h2 class="section-title">Kustomisasi Finishing & Tekstur Material</h2>
+                    <p class="section-description">
+                        Pilih jenis produk, kombinasi patina warna, serta tekstur tempa manual untuk melihat simulasi visual kerajinan tembaga Anda secara langsung.
+                    </p>
+                </div>
+
+                <div class="customizer-grid">
+                    <!-- Left Control Panel -->
+                    <div class="customizer-panel glass-card">
+                        <h3 class="panel-title"><i class="fa-solid fa-sliders text-copper"></i> Panel Kontrol Material</h3>
+                        
+                        <!-- Product Selection -->
+                        <div class="control-group">
+                            <label class="control-label">1. Pilih Produk Logam:</label>
+                            <div class="product-selector-grid">
+                                <button class="btn-select-product active" data-product="bathtub">
+                                    <i class="fa-solid fa-bath"></i> Bak Mandi
+                                </button>
+                                <button class="btn-select-product" data-product="chandelier">
+                                    <i class="fa-solid fa-lightbulb"></i> Chandelier
+                                </button>
+                                <button class="btn-select-product" data-product="relief">
+                                    <i class="fa-solid fa-gem"></i> Relief Dinding
+                                </button>
+                                <button class="btn-select-product" data-product="vase">
+                                    <i class="fa-solid fa-wine-glass"></i> Vas & Decor
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Metal Material Type -->
+                        <div class="control-group">
+                            <label class="control-label">2. Pilih Material Base:</label>
+                            <div class="material-options">
+                                <label class="radio-card active">
+                                    <input type="radio" name="material" value="copper" checked>
+                                    <span class="radio-content">
+                                        <span class="color-swatch swatch-copper"></span>
+                                        <span class="swatch-name">Tembaga Red-Copper (99.9%)</span>
+                                    </span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="material" value="brass">
+                                    <span class="radio-content">
+                                        <span class="color-swatch swatch-brass"></span>
+                                        <span class="swatch-name">Kuningan Golden Brass</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Patina & Finishing Options -->
+                        <div class="control-group">
+                            <label class="control-label">3. Lapisan Finishing / Patina:</label>
+                            <div class="finish-swatches-grid">
+                                <button class="swatch-btn active" data-finish="polished" title="Polished Rose Metallic">
+                                    <span class="swatch-circle finish-polished"></span>
+                                    <span class="swatch-label">Polished Metallic</span>
+                                </button>
+                                <button class="swatch-btn" data-finish="antique" title="Hand Rubbed Antique Dark">
+                                    <span class="swatch-circle finish-antique"></span>
+                                    <span class="swatch-label">Antique Patina</span>
+                                </button>
+                                <button class="swatch-btn" data-finish="green" title="Verdigris Green Patina">
+                                    <span class="swatch-circle finish-green"></span>
+                                    <span class="swatch-label">Verdigris Green</span>
+                                </button>
+                                <button class="swatch-btn" data-finish="black" title="Burnished Black Accent">
+                                    <span class="swatch-circle finish-black"></span>
+                                    <span class="swatch-label">Burnished Black</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Texture Surface Options -->
+                        <div class="control-group">
+                            <label class="control-label">4. Tekstur Permukaan:</label>
+                            <div class="texture-btn-group">
+                                <button class="btn-texture active" data-texture="hammered">
+                                    <i class="fa-solid fa-circle-dot"></i> Tempa Bintik (Hammered)
+                                </button>
+                                <button class="btn-texture" data-texture="smooth">
+                                    <i class="fa-solid fa-sparkles"></i> Mulus Mirror (Smooth)
+                                </button>
+                                <button class="btn-texture" data-texture="ukir">
+                                    <i class="fa-solid fa-feather"></i> Ukir Relief (Pattern)
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Display Viewer -->
+                    <div class="customizer-viewer glass-card">
+                        <div class="viewer-header">
+                            <div class="live-status">
+                                <span class="pulse-dot"></span> LIVE SIMULATION PREVIEW
+                            </div>
+                            <button id="reset-customizer" class="btn-icon-link"><i class="fa-solid fa-rotate-left"></i> Reset Studio</button>
+                        </div>
+
+                        <div class="viewer-stage" id="viewer-stage">
+                            <!-- Interactive Render Canvas/SVG -->
+                            <div class="render-box" id="render-box">
+                                <svg id="customizer-svg" viewBox="0 0 600 450" class="customizer-render-svg">
+                                    <!-- Dynamic SVG Content Rendered via JS -->
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="viewer-spec-summary">
+                            <div class="spec-badge-list">
+                                <span class="spec-tag" id="spec-tag-product">Produk: Bak Mandi</span>
+                                <span class="spec-tag" id="spec-tag-material">Bahan: Tembaga Murni</span>
+                                <span class="spec-tag" id="spec-tag-finish">Finish: Polished Metallic</span>
+                                <span class="spec-tag" id="spec-tag-texture">Tekstur: Tempa Bintik</span>
+                            </div>
+                            <button id="btn-apply-customizer" class="btn btn-primary btn-block">
+                                <i class="fa-solid fa-calculator"></i> Hitung Estimasi Biaya Produk Ini
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kalkulator Harga & Custom Estimator -->
+        <section id="calculator" class="section calculator-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">INSTANT ESTIMATION</span>
+                    <h2 class="section-title">Kalkulator Estimasi Biaya & Spesifikasi</h2>
+                    <p class="section-description">
+                        Masukkan ukuran dan spesifikasi kerajinan yang Anda butuhkan untuk mendapatkan perkiraan kebutuhan bahan plat tembaga, estimasi berat, dan kisaran harganya.
+                    </p>
+                </div>
+
+                <div class="calculator-card glass-card">
+                    <form id="calc-form" class="calc-form">
+                        <div class="calc-grid">
+                            <!-- Left Column: Specs Input -->
+                            <div class="calc-col">
+                                <h3 class="calc-subtitle"><i class="fa-solid fa-ruler-combined text-copper"></i> Dimensi & Material</h3>
+
+                                <div class="form-group">
+                                    <label for="calc-product-type" class="form-label">Tipe Produk Logam</label>
+                                    <select id="calc-product-type" class="form-select">
+                                        <option value="bathtub">Bak Mandi Tembaga (Copper Tub)</option>
+                                        <option value="chandelier">Chandelier / Lampu Gantung Masjid</option>
+                                        <option value="relief">Relief Dinding / Kaligrafi Ukir</option>
+                                        <option value="dome">Kubah Masjid Tembaga</option>
+                                        <option value="vase">Wastafel / Vas / Home Decor</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-4">
+                                        <label for="calc-length" class="form-label">Panjang (cm)</label>
+                                        <input type="number" id="calc-length" class="form-input" value="170" min="20" max="1000">
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label for="calc-width" class="form-label">Lebar (cm)</label>
+                                        <input type="number" id="calc-width" class="form-input" value="75" min="20" max="1000">
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label for="calc-height" class="form-label">Tinggi (cm)</label>
+                                        <input type="number" id="calc-height" class="form-input" value="65" min="10" max="1000">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-6">
+                                        <label for="calc-thickness" class="form-label">Ketebalan Plat Logam</label>
+                                        <select id="calc-thickness" class="form-select">
+                                            <option value="0.8">0.8 mm (Standard Light)</option>
+                                            <option value="1.0" selected>1.0 mm (Standard Premium)</option>
+                                            <option value="1.2">1.2 mm (Heavy Duty)</option>
+                                            <option value="1.5">1.5 mm (Extra Thick)</option>
+                                            <option value="2.0">2.0 mm (Ultra Structural)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="calc-material-type" class="form-label">Jenis Logam</label>
+                                        <select id="calc-material-type" class="form-select">
+                                            <option value="copper" selected>Tembaga Murni (Pure Red Copper 99.9%)</option>
+                                            <option value="brass">Kuningan Impor (Golden Brass)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Results & Quotation Output -->
+                            <div class="calc-col calc-result-box">
+                                <h3 class="calc-subtitle"><i class="fa-solid fa-file-invoice-dollar text-copper"></i> Hasil Estimasi Spesifikasi</h3>
+                                
+                                <div class="result-display-grid">
+                                    <div class="result-item">
+                                        <span class="result-label">Estimasi Luas Plat</span>
+                                        <span class="result-value" id="res-surface-area">0.00 m²</span>
+                                    </div>
+                                    <div class="result-item">
+                                        <span class="result-label">Estimasi Berat Logam</span>
+                                        <span class="result-value" id="res-weight">0.00 kg</span>
+                                    </div>
+                                </div>
+
+                                <div class="price-range-box">
+                                    <span class="price-range-label">PERKIRAAN ESTIMASI HARGA</span>
+                                    <div class="price-range-value" id="res-price-range">Rp 0 - Rp 0</div>
+                                    <span class="price-note">*Termasuk pengerjaan tempa tangan, finishing & coating anti-karat. Belum termasuk ongkos kirim.</span>
+                                </div>
+
+                                <div class="calc-action-group">
+                                    <a href="#" id="btn-whatsapp-quote" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
+                                        <i class="fa-brands fa-whatsapp"></i> Kirim Spesifikasi Ini ke WhatsApp Admin
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katalog Produk Interaktif -->
+        <section id="katalog" class="section catalog-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">OUR CRAFT GALLERY</span>
+                    <h2 class="section-title">Katalog Produk Kerajinan Tembaga & Kuningan</h2>
+                    <p class="section-description">
+                        Temukan berbagai karya kerajinan logam buatan tangan dengan presisi tinggi dan finishing tahan lama.
+                    </p>
+
+                    <!-- Catalog Filter Category Buttons -->
+                    <div class="catalog-filters">
+                        <button class="btn-filter active" data-filter="all">Semua Produk</button>
+                        <button class="btn-filter" data-filter="decor">Prasmanan &amp; Decor</button>
+                        <button class="btn-filter" data-filter="chandelier">Lampu &amp; Chandelier</button>
+                        <button class="btn-filter" data-filter="relief">Relief &amp; Kaligrafi</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Product items dynamically rendered via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             GALERI FOTO PRODUK - Swiper Fullwidth Carousel
+             ============================================================ -->
+        <section id="galeri" class="section gallery-section">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">OUR WORK IN PICTURES</span>
+                    <h2 class="section-title">Galeri Karya Kerajinan Tembaga &amp; Kuningan</h2>
+                    <p class="section-description">
+                        Setiap karya dibuat dengan tangan oleh pengrajin maestro dari Tumang, Boyolali — Jawa Tengah.
+                    </p>
+                </div>
+
+                <!-- Main Gallery Swiper -->
+                <div class="swiper gallery-swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-01.jpg" alt="Set Prasmanan Tembaga Ukir Tradisional Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Tembaga Ukir</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-02.jpg" alt="Kendil Tembaga Ukir Antik Khas Jawa Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kendil Tembaga Ukir Antik</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-03.jpg" alt="Chafing Dish Prasmanan Persegi Ukir Premium" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chafing Dish Prasmanan Persegi</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-04.jpg" alt="Set Mangkuk Tembaga Hammered Polished Export Quality" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Mangkuk Hammered Copper</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-05.jpg" alt="Kendil Tembaga Hammered Outdoor Dekoratif" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kendil Tembaga Hammered Outdoor</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-06.jpg" alt="Set Prasmanan Kuningan Gold Premium Pernikahan" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Brass Gold</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-07.jpg" alt="Set Prasmanan Kuningan 3-Burner Hotel Ballroom" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Brass 3-Burner</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-08.jpg" alt="Lampu Chandelier Tembaga Ukir Masjid Mewah" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chandelier Masjid Tembaga Ukir</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-09.jpg" alt="Lampu Chandelier Kuningan 16-Arm Klasik Mewah" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chandelier Kuningan 16-Arm</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-10.jpg" alt="Kerajinan Tembaga Boyolali Premium" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kerajinan Tembaga Premium</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-11.jpg" alt="Kerajinan Kuningan Handcrafted Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kerajinan Kuningan Handcrafted</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-12.jpg" alt="Produk Tembaga Ukir Artisan Tumang" loading="lazy" decoding="async"><div class="gallery-caption"><span>Tembaga Ukir Artisan Tumang</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-13.jpg" alt="Cermin Tembaga Ukir Oval Antique Floral" loading="lazy" decoding="async"><div class="gallery-caption"><span>Cermin Tembaga Ukir Oval</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-14.jpg" alt="Relief Pintu Kabah Kuningan Emas Framed" loading="lazy" decoding="async"><div class="gallery-caption"><span>Relief Pintu Kabah Kuningan</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-15.jpg" alt="Jam Dinding Kuningan Dekoratif Artistik" loading="lazy" decoding="async"><div class="gallery-caption"><span>Jam Dinding Kuningan Artistik</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-16.jpg" alt="Kerajinan Tembaga Custom Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Custom Order Tembaga Boyolali</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-17.jpg" alt="Kerajinan Kuningan Ukir Premium Tumang" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kuningan Ukir Premium</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-18.jpg" alt="Karya Seni Logam Tembaga Artisan" loading="lazy" decoding="async"><div class="gallery-caption"><span>Karya Seni Logam Artisan</span></div></div></div>
+                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-19.jpg" alt="Kerajinan Tembaga Kuningan Boyolali Ekspor" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kerajinan Tembaga Ekspor</span></div></div></div>
+                    </div>
+                    <div class="swiper-pagination gallery-pagination"></div>
+                    <div class="swiper-button-prev gallery-prev"></div>
+                    <div class="swiper-button-next gallery-next"></div>
+                </div>
+
+                <!-- CTA under gallery -->
+                <div class="gallery-cta" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20dengan%20produk%20kerajinan%20tembaga%20Anda" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Tanyakan Produk via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Product Detail Modal -->
+        <div id="product-modal" class="modal-overlay" aria-hidden="true">
+            <div class="modal-card glass-card">
+                <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+                <div class="modal-grid" id="modal-content">
+                    <!-- Modal Content Rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Crafting Process Section -->
+        <section id="proses" class="section process-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">MASTERY PROCESS</span>
+                    <h2 class="section-title">6 Tahap Pembuatan Kerajinan Tempa</h2>
+                    <p class="section-description">
+                        Setiap produk yang kami buat melewati proses tempa tradisional yang membutuhkan ketelitian tinggi dari maestro pengrajin Boyolali.
+                    </p>
+                </div>
+
+                <div class="process-stepper">
+                    <div class="process-step-item active" data-step="1">
+                        <div class="step-badge">01</div>
+                        <div class="step-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+                        <h3 class="step-title">Desain & Pemotongan Plat</h3>
+                        <p class="step-desc">Lembaran tembaga murni 99.9% diukur dan dipotong secara presisi sesuai dengan rancangan skala 1:1.</p>
+                    </div>
+
+                    <div class="process-step-item" data-step="2">
+                        <div class="step-badge">02</div>
+                        <div class="step-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                        <h3 class="step-title">Pembakaran & Tempa Bentuk</h3>
+                        <p class="step-desc">Plat dipanaskan dengan api suhu tinggi lalu ditempa manual membentuk lekukan 3D yang kokoh.</p>
+                    </div>
+
+                    <div class="process-step-item" data-step="3">
+                        <div class="step-badge">03</div>
+                        <div class="step-icon"><i class="fa-solid fa-hammer"></i></div>
+                        <h3 class="step-title">Ukiran & Teksturing Tempa</h3>
+                        <p class="step-desc">Pemberian motif ukiran relief atau tekstur bintik tempa manual palu bulat secara konsisten.</p>
+                    </div>
+
+                    <div class="process-step-item" data-step="4">
+                        <div class="step-badge">04</div>
+                        <div class="step-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="step-title">Perakitan & Sambungan Seamless</h3>
+                        <p class="step-desc">Pengelasan khusus tembaga/kuningan serta perakitan rangka besi anti-karat internal.</p>
+                    </div>
+
+                    <div class="process-step-item" data-step="5">
+                        <div class="step-badge">05</div>
+                        <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3 class="step-title">Patina & Clear Coating</h3>
+                        <p class="step-desc">Pemberian lapisan patina warna (Antique/Verdigris) dilanjutkan dengan semprotan lacquer coating anti-oksidasi.</p>
+                    </div>
+
+                    <div class="process-step-item" data-step="6">
+                        <div class="step-badge">06</div>
+                        <div class="step-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <h3 class="step-title">Quality Control & Packing Kayu</h3>
+                        <p class="step-desc">Inspeksi akhir kualitas dan pengemasan peti kayu aman berstandar pengiriman antar pulau & ekspor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">CLIENT TRUST</span>
+                    <h2 class="section-title">Testimoni & Kepuasan Pelanggan</h2>
+                    <p class="section-description">
+                        Dipercaya oleh arsitek, desainer interior, pengembang hotel, serta pengurus masjid di seluruh Indonesia.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Kualitas Bak Mandi Tembaga pesanan villa kami di Bali luar biasa rapi. Finishing antique patina sangat presisi dan membuat kamar mandi menjadi terkesan super mewah."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-avatar">B</div>
+                            <div>
+                                <h4 class="client-name">Bapak Hendra Wijaya</h4>
+                                <span class="client-title">Owner Luxury Villa Resort Bali</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Pengerjaan Lampu Nabawi Kuningan untuk masjid agung daerah kami sangat profesional. Struktur rangka kokoh dan ukiran kaligrafinya sangat memukau jemaah."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-avatar">H</div>
+                            <div>
+                                <h4 class="client-name">H. Ahmad Subarkah</h4>
+                                <span class="client-title">Panitia Pembangunan Masjid Agung</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Sebagai interior designer, menemukan pengrajin tembaga yang komunikatif dan paham detail teknis adalah hal langka. Aura Copper selalu bisa eksekusi ide custom saya."
+                        </p>
+                        <div class="client-info">
+                            <div class="client-avatar">S</div>
+                            <div>
+                                <h4 class="client-name">Stephanie Putri, S.Ars</h4>
+                                <span class="client-title">Principal Architect & Interior Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">PERTANYAAN UMUM</span>
+                    <h2 class="section-title">Pertanyaan Sering Diajukan (FAQ)</h2>
+                </div>
+
+                <div class="faq-accordion-wrapper">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Apakah bisa memesan kerajinan tembaga dengan ukuran & desain kustom?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sangat bisa! 90% pengerjaan kami adalah Custom Order. Anda dapat mengirimkan sketsa, gambar referensi, atau rancangan CAD 3D, dan tim pengrajin kami akan menyesuaikan dimensi serta spesifikasinya.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Apakah kerajinan tembaga dan kuningan bisa berkarat atau berubah warna?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tembaga dan kuningan murni tidak akan berkarat seperti besi. Semua produk kami dilindungi dengan semprotan Clear Lacquer Coating khusus bermutu tinggi yang melindunginya dari oksidasi udara dan perubahan warna dalam waktu bertahun-tahun.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Bagaimana proses pengiriman ke luar daerah atau luar negeri?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Kami telah berpengalaman mengirimkan karya tembaga ke seluruh wilayah Indonesia (Sumatra, Jawa, Bali, Kalimantan, Sulawesi, Papua) serta ekspor menggunakan packing kayu peti rapat berpereda benturan.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Berapa lama proses pembuatan pesanan custom?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Durasi pembuatan bervariasi tergantung ukuran dan tingkat kerumitan ukiran, biasanya berkisar antara 7 hingga 30 hari kerja.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Callout Banner -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner-card glass-card">
+                    <h2 class="cta-title">Siap Wujudkan Kerajinan Tembaga Impian Anda?</h2>
+                    <p class="cta-desc">Konsultasikan ide desain, dimensi, dan budget pesanan Anda secara gratis bersama master pengrajin kami sekarang.</p>
+                    <div class="cta-btn-wrapper">
+                        <a href="https://wa.me/6281332804773?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20desain%20dan%20harga%20kerajinan%20tembaga" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis via WhatsApp
+                        </a>
+                        <a href="#calculator" class="btn btn-secondary btn-lg">
+                            <i class="fa-solid fa-calculator"></i> Gunakan Kalkulator Harga
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="#hero" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-hammer"></i></div>
+                    <div class="logo-text">
+                        <span class="brand-name">AURA<span class="highlight">COPPER</span></span>
+                    </div>
+                </a>
+                <p class="footer-about">
+                    Pusat kerajinan logam tembaga & kuningan berkualitas tinggi dari Tumang, Cepogo, Boyolali, Jawa Tengah. Berpengalaman melayani proyek nasional & ekspor.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Navigasi Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="#customizer">Studio Customizer</a></li>
+                    <li><a href="#calculator">Kalkulator Estimasi</a></li>
+                    <li><a href="#katalog">Katalog Produk</a></li>
+                    <li><a href="#proses">Tahap Pembuatan</a></li>
+                    <li><a href="#faq">Pertanyaan FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Kategori Produk</h4>
+                <ul class="footer-links">
+                    <li><a href="#katalog">Bak Mandi Tembaga</a></li>
+                    <li><a href="#katalog">Lampu Chandelier Masjid</a></li>
+                    <li><a href="#katalog">Relief & Kaligrafi Ukir</a></li>
+                    <li><a href="#katalog">Kubah Masjid Logam</a></li>
+                    <li><a href="#katalog">Wastafel & Decor</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Workshop & Kontak</h4>
+                <ul class="footer-contact-info">
+                    <li><i class="fa-solid fa-location-dot text-copper"></i> Tumang, Cepogo, Kabupaten Boyolali, Jawa Tengah 57362</li>
+                    <li><i class="fa-solid fa-phone text-copper"></i> <a href="tel:+6281332804773" style="color:inherit;">+62 813-3280-4773</a></li>
+                    <li><i class="fa-brands fa-whatsapp text-copper"></i> <a href="https://wa.me/6281332804773" target="_blank" rel="noopener" style="color:inherit;">+62 813-3280-4773</a></li>
+                    <li><i class="fa-solid fa-envelope text-copper"></i> <a href="mailto:nyotowarna@gmail.com" style="color:inherit;">nyotowarna@gmail.com</a></li>
+                    <li><i class="fa-solid fa-clock text-copper"></i> Senin - Sabtu: 08:00 - 17:00 WIB</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Aura Copper & Brass Crafts. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP - Professional Animation Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
+    <!-- Lenis - Ultra Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <!-- AOS - Animate on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Swiper.js - Premium Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- VanillaTilt - 3D Tilt Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+    <!-- Popper.js (Tippy dependency) -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+
+    <!-- Tippy.js - Smart Tooltips -->
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+    <!-- SplitType - Text Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+
+    <!-- CountUp.js - Number Counter Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>

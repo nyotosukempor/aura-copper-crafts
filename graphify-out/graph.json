@@ -1,0 +1,258 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app",
+      "community": 0,
+      "norm_label": "app.js"
+    },
+    {
+      "label": "animateParticles()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "app_animateparticles",
+      "community": 0,
+      "norm_label": "animateparticles()"
+    },
+    {
+      "label": "runCounters()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "app_runcounters",
+      "community": 0,
+      "norm_label": "runcounters()"
+    },
+    {
+      "label": "updateCustomizerView()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "app_updatecustomizerview",
+      "community": 0,
+      "norm_label": "updatecustomizerview()"
+    },
+    {
+      "label": "calculateEstimates()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L341",
+      "_origin": "ast",
+      "id": "app_calculateestimates",
+      "community": 0,
+      "norm_label": "calculateestimates()"
+    },
+    {
+      "label": "renderProducts()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L528",
+      "_origin": "ast",
+      "id": "app_renderproducts",
+      "community": 1,
+      "norm_label": "renderproducts()"
+    },
+    {
+      "label": "openProductModal()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L587",
+      "_origin": "ast",
+      "id": "app_openproductmodal",
+      "community": 1,
+      "norm_label": "openproductmodal()"
+    },
+    {
+      "label": "AGENTS.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/AGENTS.md",
+      "description": "Agent skill or documentation file AGENTS.md",
+      "file_type": "concept",
+      "id": "doc:.agents/AGENTS.md",
+      "community": 2,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/interactive-3d-customizer/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/interactive-3d-customizer/SKILL.md",
+      "community": 3,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/kerajinan-tembaga-builder/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/kerajinan-tembaga-builder/SKILL.md",
+      "community": 4,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-audit/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail-audit/SKILL.md",
+      "community": 5,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-debt/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail-debt/SKILL.md",
+      "community": 6,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-gain/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail-gain/SKILL.md",
+      "community": 7,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-help/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail-help/SKILL.md",
+      "community": 8,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail-review/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail-review/SKILL.md",
+      "community": 9,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "SKILL.md",
+      "type": "DOCUMENT",
+      "source_location": ".agents/skills/ponytail/SKILL.md",
+      "description": "Agent skill or documentation file SKILL.md",
+      "file_type": "concept",
+      "id": "doc:.agents/skills/ponytail/SKILL.md",
+      "community": 10,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "index.html",
+      "type": "DOCUMENT",
+      "source_location": "index.html",
+      "description": "Agent skill or documentation file index.html",
+      "file_type": "concept",
+      "id": "doc:index.html",
+      "community": 11,
+      "norm_label": "index.html"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_animateparticles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L341",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_calculateestimates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L587",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_openproductmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L528",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_renderproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_runcounters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L217",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app",
+      "target": "app_updatecustomizerview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L563",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_renderproducts",
+      "target": "app_openproductmodal",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

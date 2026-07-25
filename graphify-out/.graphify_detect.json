@@ -1,0 +1,37 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\app.js"
+    ],
+    "document": [
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\AGENTS.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\interactive-3d-customizer\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\kerajinan-tembaga-builder\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail-audit\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail-debt\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail-gain\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail-help\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail-review\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\.agents\\skills\\ponytail\\SKILL.md",
+      "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\index.html"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 11,
+  "total_words": 7444,
+  "needs_graph": false,
+  "warning": "Corpus is ~7,444 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "unclassified": [
+    "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\style.css"
+  ],
+  "walk_errors": [],
+  "ignored": [],
+  "pruned_noise_dirs": [
+    "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE\\graphify-out\\"
+  ],
+  "graphifyignore_patterns": 0,
+  "scan_root": "C:\\Users\\Windows 11\\Documents\\PROJECT WEBSITE"
+}
