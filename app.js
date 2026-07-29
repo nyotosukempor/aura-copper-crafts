@@ -414,11 +414,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 9. AOS - ANIMATE ON SCROLL ---
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800,
+            duration: 400,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 80,
-            delay: 50,
+            offset: 60,
+            delay: 0,
         });
     }
 
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof Swiper !== 'undefined') {
         new Swiper('.gallery-swiper', {
             loop: true,
-            speed: 800,
+            speed: 400,
             autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
             slidesPerView: 1,
             centeredSlides: true,
@@ -444,22 +444,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-        // REMOVED: scrub parallax on bg-ambient-glow (was causing jank on every scroll pixel)
-        // Only animate section headings and cards on enter (once, not scrubbed)
-
         // Section headings fade-in on enter
         gsap.utils.toArray('.section-header').forEach(el => {
             gsap.from(el, {
-                opacity: 0, y: 30, duration: 0.8, ease: 'power2.out',
-                scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+                opacity: 0, y: 20, duration: 0.45, ease: 'power2.out',
+                scrollTrigger: { trigger: el, start: 'top 90%', once: true },
             });
         });
 
         // Stat & process cards stagger (capped delay so it doesn't feel slow)
         gsap.utils.toArray('.stat-card, .process-step-item').forEach((card, i) => {
             gsap.from(card, {
-                opacity: 0, y: 40, duration: 0.55,
-                delay: Math.min(i * 0.08, 0.4),
+                opacity: 0, y: 20, duration: 0.35,
+                delay: Math.min(i * 0.04, 0.2),
                 ease: 'power2.out',
                 scrollTrigger: { trigger: card, start: 'top 90%', once: true },
             });
