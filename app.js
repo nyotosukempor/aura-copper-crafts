@@ -85,27 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. METRICS COUNTER ANIMATION (IntersectionObserver - no scroll listener) ---
-    const numEls = document.querySelectorAll('.metric-number');
-    if (numEls.length) {
-        const counterObs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = +el.dataset.target, step = target / 50;
-                    let cur = 0;
-                    const timer = setInterval(() => {
-                        cur += step;
-                        if (cur >= target) { el.textContent = target; clearInterval(timer); }
-                        else { el.textContent = Math.ceil(cur); }
-                    }, 30);
-                    counterObs.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        numEls.forEach(el => counterObs.observe(el));
-    }
-
 
     // --- 4. STUDIO KUSTOMIZER ENGINE (DELEGATED) ---
     const state = { product: 'bathtub', material: 'copper', finish: 'polished', texture: 'hammered' };
@@ -198,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <ellipse cx="300" cy="80" rx="70" ry="18" fill="url(#cG)" stroke="#ffffff" stroke-width="2"/>`;
         }
 
-        svg.innerHTML = `
+        svg.classList.add('updating');
+        requestAnimationFrame(() => {
+            svg.innerHTML = `
             <defs>
                 <linearGradient id="cG" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="${stops.s1}"/><stop offset="40%" stop-color="${stops.s2}"/>
@@ -209,6 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <circle cx="12" cy="12" r="2" fill="#000" opacity="${patOpacity}"/>
                 </pattern>
             </defs>${shape}`;
+            requestAnimationFrame(() => {
+                svg.classList.remove('updating');
+            });
+        });
     }
 
     updateView();
@@ -310,11 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`).join('');
 
         // Re-init VanillaTilt for new cards
-        if (typeof VanillaTilt !== 'undefined') {
-            VanillaTilt.init(document.querySelectorAll('.product-card[data-tilt]'), {
-                max: 6, speed: 400, glare: true, 'max-glare': 0.1, perspective: 1200, scale: 1.02,
-            });
-        }
+        initTilt(document.querySelectorAll('.product-card[data-tilt]'), {
+            max: 6, speed: 400, glare: true, 'max-glare': 0.1, perspective: 1200, scale: 1.02,
+        });
     }
 
     renderCatalog();
@@ -469,28 +452,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 const split = new SplitType(heroTitle, { types: 'words,chars' });
                 gsap.from(split.chars, {
                     opacity: 0,
-                    y: 30,
-                    rotateX: -40,
-                    stagger: 0.025,
-                    duration: 0.7,
-                    ease: 'back.out(2)',
-                    delay: 0.3,
+                    y: 20,
+                    stagger: 0.02,
+                    duration: 0.5,
+                    ease: 'power3.out',
+                    delay: 0.2,
                 });
             }
         }
     }
 
-    // --- 11. VANILLA TILT - 3D CARD EFFECT ---
-    if (typeof VanillaTilt !== 'undefined') {
-        VanillaTilt.init(document.querySelectorAll('.katalog-card, .stat-card, .process-step'), {
-            max: 8,
-            speed: 400,
-            glare: true,
-            'max-glare': 0.15,
-            perspective: 1200,
-            scale: 1.03,
-        });
+    function initTilt(elements, options) {
+        if (typeof VanillaTilt === 'undefined') return;
+        const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (canHover && !reduceMotion) {
+            VanillaTilt.init(elements, options);
+        }
     }
+
+    // --- 11. VANILLA TILT - 3D CARD EFFECT ---
+    initTilt(document.querySelectorAll('.katalog-card, .stat-card, .process-step'), {
+        max: 8,
+        speed: 400,
+        glare: true,
+        'max-glare': 0.15,
+        perspective: 1200,
+        scale: 1.03,
+    });
 
     // --- 12. TIPPY.JS - SMART TOOLTIPS ---
     if (typeof tippy !== 'undefined') {
