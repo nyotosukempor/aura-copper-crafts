@@ -1,15 +1,26 @@
 /* ==========================================================================
-   AURA COPPER & BRASS CRAFTS - INTERACTIVE ENGINE & ANIMATION LOGIC
+   AURA COPPER & BRASS CRAFTS - INTERACTIVE ENGINE & MOBILE UI/UX OPTIMIZATION
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------------------------------------------------
-       1. NAVBAR SCROLL SPY & MOBILE TOGGLE
+       1. NAVBAR SCROLL SPY & MOBILE DRAWER TOGGLE WITH BACKDROP
        -------------------------------------------------------------------------- */
     const header = document.getElementById('main-header');
     const mainNav = document.getElementById('main-nav');
     const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+
+    function closeMobileNav() {
+        if (mainNav) mainNav.classList.remove('open');
+        if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+        if (mobileToggle) {
+            const icon = mobileToggle.querySelector('i');
+            if (icon) icon.className = 'fa-solid fa-bars';
+        }
+        document.body.style.overflow = '';
+    }
 
     let scrollTicking = false;
     window.addEventListener('scroll', () => {
@@ -34,23 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     if (mobileToggle && mainNav) {
-        mobileToggle.addEventListener('click', () => {
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isOpen = mainNav.classList.toggle('open');
+            if (mobileBackdrop) mobileBackdrop.classList.toggle('active', isOpen);
             const icon = mobileToggle.querySelector('i');
             if (icon) icon.className = `fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`;
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
+        if (mobileBackdrop) {
+            mobileBackdrop.addEventListener('click', closeMobileNav);
+        }
+
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('open');
-                const icon = mobileToggle.querySelector('i');
-                if (icon) icon.className = 'fa-solid fa-bars';
-            });
+            link.addEventListener('click', closeMobileNav);
         });
     }
 
     /* --------------------------------------------------------------------------
-       2. HERO SPARK PARTICLES CANVAS
+       2. HERO SPARK PARTICLES CANVAS (PERFORMANCE OPTIMIZED)
        -------------------------------------------------------------------------- */
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
@@ -63,13 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
             h = canvas.height = window.innerHeight;
         }, { passive: true });
 
-        const particles = Array.from({ length: 26 }, () => ({
+        const particleCount = window.innerWidth < 768 ? 14 : 26;
+        const particles = Array.from({ length: particleCount }, () => ({
             x: Math.random() * w,
             y: Math.random() * h,
-            r: Math.random() * 2.2 + 0.5,
+            r: Math.random() * 2.0 + 0.5,
             color: Math.random() > 0.5 ? '#f59e0b' : '#d97736',
-            vx: (Math.random() - 0.5) * 0.35,
-            vy: -Math.random() * 0.65 - 0.2
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: -Math.random() * 0.5 - 0.2
         }));
 
         const heroEl = document.getElementById('hero');
@@ -78,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; }, { threshold: 0 }).observe(heroEl);
         }
 
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 6;
         (function renderSparks() {
             if (heroVisible) {
                 ctx.clearRect(0, 0, w, h);
@@ -539,6 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lenis = new Lenis({
             duration: 1.1,
             easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            touchMultiplier: 1.5
         });
 
         if (typeof gsap !== 'undefined') {
@@ -551,14 +567,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --------------------------------------------------------------------------
-       8. AOS & SWIPER CAROUSEL INITIALIZATION
+       8. AOS & SWIPER CAROUSEL INITIALIZATION (TOUCH OPTIMIZED)
        -------------------------------------------------------------------------- */
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 400,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 60,
+            offset: 40,
+            disable: 'mobile'
         });
     }
 
@@ -568,13 +585,16 @@ document.addEventListener('DOMContentLoaded', () => {
             speed: 500,
             autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
             slidesPerView: 1,
-            spaceBetween: 24,
+            spaceBetween: 20,
+            touchRatio: 1,
+            touchAngle: 45,
+            threshold: 5,
             keyboard: { enabled: true },
             pagination: { el: '.gallery-pagination', clickable: true },
             navigation: { prevEl: '.gallery-prev', nextEl: '.gallery-next' },
             breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
+                768: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 24 }
             }
         });
     }
@@ -601,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        if (typeof SplitType !== 'undefined') {
+        if (typeof SplitType !== 'undefined' && window.innerWidth > 768) {
             const heroTitle = document.querySelector('.hero-title');
             if (heroTitle) {
                 const split = new SplitType(heroTitle, { types: 'words,chars' });
@@ -612,11 +632,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /* --------------------------------------------------------------------------
+       10. VANILLATILT (DISABLED ON MOBILE/TOUCH DEVICES FOR 60FPS SMOOTH SCROLL)
+       -------------------------------------------------------------------------- */
     function initTilt(elements, options) {
         if (typeof VanillaTilt === 'undefined') return;
         const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (canHover && !reduceMotion) {
+        const isDesktop = window.innerWidth > 768;
+        if (canHover && isDesktop && !reduceMotion) {
             VanillaTilt.init(elements, options);
         }
     }
@@ -626,9 +650,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --------------------------------------------------------------------------
-       10. TIPPY.JS TOOLTIPS & COUNTUP.JS COUNTERS
+       11. TIPPY.JS TOOLTIPS & COUNTUP.JS COUNTERS
        -------------------------------------------------------------------------- */
-    if (typeof tippy !== 'undefined') {
+    if (typeof tippy !== 'undefined' && window.innerWidth > 768) {
         tippy('.btn-wa', {
             content: 'Chat langsung via WhatsApp!',
             theme: 'translucent',
