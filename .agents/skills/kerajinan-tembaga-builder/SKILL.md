@@ -22,8 +22,8 @@ Skill ini digunakan untuk mengarahkan pembuatan website landing page interaktif 
 ## Struktur Komponen Landing Page
 - **Hero Section**: Banner utama dengan pencahayaan hangat metallic, latar belakang onyx, CTA langsung ke kustomizer dan galeri.
 - **Craft Value Banner**: Garansi material 100% tembaga/kuningan, bebas karat, pengerjaan presisi, pengiriman aman seluruh Indonesia & ekspor.
-- **Studio Kustomizer & Material Preview**: Kontrol interaktif untuk melihat warna dan tekstur tempa.
-- **Kalkulator Biaya Custom Order**: Form masukan dimensi (panjang x lebar x tinggi) & pilihan finishing yang otomatis menghitung estimasi biaya dan berat plat.
+- **Studio Kustomizer & Real Photo Preview**: Visualizer interaktif dengan foto asli produk resolusi tinggi (crossfade transition) mencakup 7 kategori produk (Bak Mandi, Chandelier, Wastafel, Relief, Kubah, Meja, Vas), 4 jenis logam (Tembaga, Kuningan, Bronze, Dual-Tone), 5 finishing warna patina, dan 4 tekstur tempa.
+- **Form Spesifikasi & Penawaran Custom Order**: Form masukan dimensi (panjang x lebar x tinggi) & pilihan finishing yang otomatis menghitung estimasi luas plat (m²) dan berat (kg) tanpa kalkulasi harga.
 - **Katalog Produk Interaktif**: Filtering cepat + modal detail foto resolusi tinggi.
 - **Tahapan Pengerjaan (Crafting Process)**: Edukasi pelanggan tentang proses 6 langkah dari lembaran plat murni hingga pengerjaan finishing lacquer tahan lama.
-- **Formulir Pemesanan & Direct WhatsApp**: Kontak cepat untuk konsultasi gratis dan pengiriman proposal harga.
+- **Formulir Pemesanan & Direct WhatsApp**: Kontak cepat untuk permohonan penawaran harga resmi via WhatsApp.
