@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --------------------------------------------------------------------------
-       8. AOS & SWIPER CAROUSEL INITIALIZATION (TOUCH OPTIMIZED)
+       8. AOS & BLOSSOM CAROUSEL GALLERY ENGINE (AUTOPLAY + ELASTICITY + CONTROLS)
        -------------------------------------------------------------------------- */
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -715,23 +715,124 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (typeof Swiper !== 'undefined') {
-        new Swiper('.gallery-swiper', {
-            loop: true,
-            speed: 500,
-            autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
-            slidesPerView: 1,
-            spaceBetween: 20,
-            touchRatio: 1,
-            touchAngle: 45,
-            threshold: 5,
-            keyboard: { enabled: true },
-            pagination: { el: '.gallery-pagination', clickable: true },
-            navigation: { prevEl: '.gallery-prev', nextEl: '.gallery-next' },
-            breakpoints: {
-                768: { slidesPerView: 2, spaceBetween: 24 },
-                1024: { slidesPerView: 3, spaceBetween: 24 }
+    // Blossom Carousel Ultra-Luxury Engine Implementation
+    const galleryCarousel = document.getElementById('gallery-carousel');
+    const thumbsContainer = document.getElementById('gallery-thumbs');
+
+    if (galleryCarousel) {
+        // 1. Render Custom Thumbnail Image Dots per Slide via renderDot API
+        if (thumbsContainer) {
+            thumbsContainer.renderDot = (index, active) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'custom-thumb-btn';
+                btn.dataset.active = String(active);
+                btn.setAttribute('aria-label', `Pilih Slide Gambar ${index + 1}`);
+
+                const slideImg = galleryCarousel.querySelectorAll('[data-blossom-slide] img')[index];
+                if (slideImg) {
+                    btn.innerHTML = `<img src="${slideImg.src}" alt="Thumb ${index + 1}" />`;
+                } else {
+                    btn.textContent = index + 1;
+                }
+                return btn;
+            };
+        }
+
+        // 2. Physical Rubberband / Elastic Overscroll Effect
+        galleryCarousel.addEventListener('overscroll', (event) => {
+            event.preventDefault(); // Turn off standard browser bounce
+            const overscrollOffset = event.detail?.left || 0;
+            const slides = galleryCarousel.querySelectorAll('[data-blossom-slide]');
+            slides.forEach((slide) => {
+                const scaleAmount = 1 - Math.abs(overscrollOffset) * 0.0008;
+                slide.style.transform = `scale(${Math.max(0.92, scaleAmount)})`;
+            });
+        });
+
+        // Reset slide scale when scroll ends
+        const resetSlideTransforms = () => {
+            const slides = galleryCarousel.querySelectorAll('[data-blossom-slide]');
+            slides.forEach(slide => {
+                slide.style.transform = 'scale(1)';
+            });
+        };
+        galleryCarousel.addEventListener('scrollend', resetSlideTransforms);
+
+        // 3. Quick View Modal Event Delegation for Gallery Cards
+        galleryCarousel.addEventListener('click', (e) => {
+            const btn = e.target.closest('.btn-quick-view') || e.target.closest('.btn-detail');
+            if (btn) {
+                e.preventDefault();
+                const id = btn.dataset.id;
+                const prod = products.find(p => p.id === id);
+                if (prod && modal && modalContent) {
+                    modalContent.innerHTML = `
+                        <div class="modal-img-col">
+                            <img src="${prod.img}" alt="${prod.title} - Kerajinan Tembaga Boyolali Asli" loading="eager" decoding="async" class="modal-product-img">
+                        </div>
+                        <div class="modal-info-col">
+                            <span class="badge-pill mb-2"><i class="fa-solid fa-certificate"></i> Handcrafted Boyolali</span>
+                            <h2 style="font-size:1.6rem; margin:0.8rem 0; font-family:var(--font-heading); color:var(--text-bright);">${prod.title}</h2>
+                            <p style="color:var(--text-muted); margin-bottom:1.2rem; font-size:0.95rem; line-height:1.65;">${prod.desc}</p>
+                            <div style="background:rgba(255,255,255,0.05); padding:1.2rem; border-radius:var(--radius-md); margin-bottom:1.6rem; border:1px solid var(--border-color); font-size:0.92rem;">
+                                <div style="margin-bottom:0.4rem;"><strong style="color:var(--copper-light);">Bahan:</strong> ${prod.material}</div>
+                                <div style="margin-bottom:0.4rem;"><strong style="color:var(--copper-light);">Finishing:</strong> ${prod.finish}</div>
+                                <div><strong style="color:var(--copper-light);">Dimensi:</strong> ${prod.dims}</div>
+                            </div>
+                            <a href="https://wa.me/6281332804773?text=${encodeURIComponent('Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk produk:\n- Nama Produk: ' + prod.title + '\n- Material: ' + prod.material + '\n- Finishing: ' + prod.finish + '\n- Dimensi: ' + prod.dims + '\n\nMohon informasi penawaran harga resmi dan ketersediaannya. Terima kasih.')}" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Minta Penawaran via WhatsApp
+                            </a>
+                        </div>`;
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
             }
+        });
+
+        // 4. Autoplay Engine (Continuous smooth scroll with pause on hover/touch)
+        let autoplayTimer = null;
+        const AUTOPLAY_DELAY = 3500;
+
+        const advanceSlide = () => {
+            const firstSlide = galleryCarousel.querySelector('[data-blossom-slide]');
+            const slideWidth = firstSlide ? firstSlide.offsetWidth + 24 : 320;
+            const maxScrollLeft = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
+
+            if (galleryCarousel.scrollLeft >= maxScrollLeft - 10) {
+                galleryCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                galleryCarousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            }
+        };
+
+        const startAutoplay = () => {
+            if (!autoplayTimer) {
+                autoplayTimer = setInterval(advanceSlide, AUTOPLAY_DELAY);
+            }
+        };
+
+        const stopAutoplay = () => {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+        };
+
+        // Start initial autoplay
+        startAutoplay();
+
+        // Pause on mouse hover & touch interactions
+        galleryCarousel.addEventListener('mouseenter', stopAutoplay);
+        galleryCarousel.addEventListener('mouseleave', startAutoplay);
+        galleryCarousel.addEventListener('touchstart', stopAutoplay, { passive: true });
+        galleryCarousel.addEventListener('touchend', startAutoplay, { passive: true });
+
+        // 5. Navigation Command Event Handler
+        galleryCarousel.addEventListener('command', (event) => {
+            stopAutoplay();
+            setTimeout(startAutoplay, 5000);
         });
     }
 

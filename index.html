@@ -32,6 +32,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Blossom Carousel Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/@blossom-carousel/web/dist/blossom-carousel-web.css" />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -444,25 +447,284 @@
                     </p>
                 </div>
 
-                <!-- Main Gallery Swiper -->
-                <div class="swiper gallery-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-01.jpg" alt="Set Prasmanan Tembaga Ukir Tradisional Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Tembaga Ukir</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-02.jpg" alt="Kendil Tembaga Ukir Antik Khas Jawa Boyolali" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kendil Tembaga Ukir Antik</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-03.jpg" alt="Chafing Dish Prasmanan Persegi Ukir Premium" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chafing Dish Prasmanan Persegi</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-04.jpg" alt="Set Mangkuk Tembaga Hammered Polished Export Quality" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Mangkuk Hammered Copper</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-05.jpg" alt="Kendil Tembaga Hammered Outdoor Dekoratif" loading="lazy" decoding="async"><div class="gallery-caption"><span>Kendil Tembaga Hammered Outdoor</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-06.jpg" alt="Set Prasmanan Kuningan Gold Premium Pernikahan" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Brass Gold</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-07.jpg" alt="Set Prasmanan Kuningan 3-Burner Hotel Ballroom" loading="lazy" decoding="async"><div class="gallery-caption"><span>Set Prasmanan Brass 3-Burner</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-08.jpg" alt="Lampu Chandelier Tembaga Ukir Masjid Mewah" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chandelier Masjid Tembaga Ukir</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-09.jpg" alt="Lampu Chandelier Kuningan 16-Arm Klasik Mewah" loading="lazy" decoding="async"><div class="gallery-caption"><span>Chandelier Kuningan 16-Arm</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-13.jpg" alt="Cermin Tembaga Ukir Oval Antique Floral" loading="lazy" decoding="async"><div class="gallery-caption"><span>Cermin Tembaga Ukir Oval</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-14.jpg" alt="Relief Pintu Kabah Kuningan Emas Framed" loading="lazy" decoding="async"><div class="gallery-caption"><span>Relief Pintu Kabah Kuningan</span></div></div></div>
-                        <div class="swiper-slide"><div class="gallery-slide-inner"><img src="assets/products/prod-15.jpg" alt="Jam Dinding Kuningan Dekoratif Artistik" loading="lazy" decoding="async"><div class="gallery-caption"><span>Jam Dinding Kuningan Artistik</span></div></div></div>
-                    </div>
-                    <div class="swiper-pagination gallery-pagination"></div>
-                    <div class="swiper-button-prev gallery-prev"></div>
-                    <div class="swiper-button-next gallery-next"></div>
+                <!-- Ultra-Luxury Blossom Carousel Gallery -->
+                <div class="luxury-gallery-container relative group">
+                    <blossom-carousel id="gallery-carousel" class="gallery-blossom-carousel flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none py-6 px-2">
+                        <!-- Slide 1 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="1">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-gem text-xs"></i> Tembaga Murni 99.9%</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-01.jpg" alt="Set Prasmanan Tembaga Ukir Tradisional" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Set Prasmanan Tembaga Ukir</h3>
+                                    <p class="card-spec">Rose Copper Polished | Handmade Boyolali</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="1" aria-label="Quick View Set Prasmanan Tembaga">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Set%20Prasmanan%20Tembaga%20Ukir" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="2">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-gem text-xs"></i> Tembaga Murni 99.9%</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-02.jpg" alt="Set Kendil Ukir Tembaga Antik" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Set Kendil Tembaga Ukir Antik</h3>
+                                    <p class="card-spec">Antique Copper Patina | Klasik Jawa</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="2" aria-label="Quick View Kendil Tembaga">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Set%20Kendil%20Tembaga%20Ukir%20Antik" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="3">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-gem text-xs"></i> Tembaga Murni</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-03.jpg" alt="Chafing Dish Prasmanan Persegi Ukir" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Chafing Dish Persegi Premium</h3>
+                                    <p class="card-spec">Polished Copper | Luxury Hotel Standard</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="3" aria-label="Quick View Chafing Dish">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Chafing%20Dish%20Prasmanan%20Persegi" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="4">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-gem text-xs"></i> Tembaga Murni 99.9%</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-04.jpg" alt="Set Mangkuk Hammered Copper Polished" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Set Mangkuk Hammered Copper</h3>
+                                    <p class="card-spec">Mirror Polished | Kualitas Ekspor</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="4" aria-label="Quick View Mangkuk Tembaga">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Set%20Mangkuk%20Hammered%20Copper" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="5">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-shield-halved text-xs"></i> Plat Heavy 1.2mm</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-05.jpg" alt="Kendil Tembaga Hammered Outdoor Grill" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Kendil Tembaga Outdoor Grill</h3>
+                                    <p class="card-spec">Hammered Natural | Resort & Villa Outdoor</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="5" aria-label="Quick View Kendil Outdoor">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Kendil%20Tembaga%20Outdoor" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="6">
+                            <div class="gallery-card-inner">
+                                <span class="badge badge-gold"><i class="fa-solid fa-crown text-xs"></i> Kuningan Class A</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-06.jpg" alt="Set Prasmanan Brass Gold Premium" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Set Prasmanan Brass Gold</h3>
+                                    <p class="card-spec">Gold Polished | Catering Pernikahan</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="6" aria-label="Quick View Prasmanan Kuningan">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Set%20Prasmanan%20Brass%20Gold" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 7 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="7">
+                            <div class="gallery-card-inner">
+                                <span class="badge badge-gold"><i class="fa-solid fa-crown text-xs"></i> Kuningan Class A</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-07.jpg" alt="Set Prasmanan Brass 3-Burner Premium" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Set Prasmanan 3-Burner Gold</h3>
+                                    <p class="card-spec">High Gloss Gold | Hotel Ballroom</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="7" aria-label="Quick View Prasmanan 3-Burner">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Set%20Prasmanan%20Brass%203-Burner" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 8 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="8">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-mosque text-xs"></i> Tembaga Ukir Masjid</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-08.jpg" alt="Lampu Chandelier Masjid Tembaga Ukir" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Chandelier Masjid Nabawi</h3>
+                                    <p class="card-spec">Antique Rose Copper | Ukir Sulur</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="8" aria-label="Quick View Chandelier Masjid">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Chandelier%20Masjid%20Tembaga" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 9 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="9">
+                            <div class="gallery-card-inner">
+                                <span class="badge badge-gold"><i class="fa-solid fa-lightbulb text-xs"></i> 16-Arm Luxury</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-09.jpg" alt="Lampu Chandelier Kuningan Klasik Mewah" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Chandelier Kuningan 16-Arm</h3>
+                                    <p class="card-spec">Antique Burnished Gold | Ballroom</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="9" aria-label="Quick View Chandelier Kuningan">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Chandelier%20Kuningan%2016-Arm" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 10 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="10">
+                            <div class="gallery-card-inner">
+                                <span class="badge"><i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Red-Copper Patina</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-13.jpg" alt="Cermin Tembaga Ukir Oval Antique" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Cermin Tembaga Oval Ukir</h3>
+                                    <p class="card-spec">Burnished Black Antique | Floral Frame</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="10" aria-label="Quick View Cermin Tembaga">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Cermin%20Tembaga%20Oval" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 11 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="11">
+                            <div class="gallery-card-inner">
+                                <span class="badge badge-gold"><i class="fa-solid fa-kaaba text-xs"></i> Kaligrafi Gold</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-14.jpg" alt="Relief Pintu Kabah Kuningan Framed" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Relief Pintu Kabah Kuningan</h3>
+                                    <p class="card-spec">Gold Polish | Framed Wall Art</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="11" aria-label="Quick View Relief Pintu Kabah">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Relief%20Pintu%20Kabah%20Kuningan" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 12 -->
+                        <div data-blossom-slide class="gallery-card snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]" data-id="12">
+                            <div class="gallery-card-inner">
+                                <span class="badge badge-gold"><i class="fa-solid fa-clock text-xs"></i> Kuningan Artisanal</span>
+                                <div class="gallery-img-wrapper">
+                                    <img src="assets/products/prod-15.jpg" alt="Jam Dinding Kuningan Dekoratif" loading="lazy" decoding="async" />
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-title">Jam Dinding Kuningan Artistik</h3>
+                                    <p class="card-spec">Gold Polished | Foyer Luxury Decor</p>
+                                    <div class="card-actions">
+                                        <button type="button" class="btn-quick-view btn-detail" data-id="12" aria-label="Quick View Jam Dinding Kuningan">
+                                            <i class="fa-solid fa-eye"></i> Quick View
+                                        </button>
+                                        <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20pesan%20custom%20Jam%20Dinding%20Kuningan" target="_blank" rel="noopener" class="btn-wa">
+                                            <i class="fa-brands fa-whatsapp"></i> Pesan Custom
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </blossom-carousel>
+
+                    <!-- Custom Prev & Next Navigation Buttons -->
+                    <blossom-prev for="gallery-carousel" class="custom-nav-btn prev" aria-label="Slide Sebelumnya">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </blossom-prev>
+                    <blossom-next for="gallery-carousel" class="custom-nav-btn next" aria-label="Slide Selanjutnya">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </blossom-next>
+
+                    <!-- Custom Thumbnail Dots Container -->
+                    <blossom-dots for="gallery-carousel" id="gallery-thumbs"></blossom-dots>
                 </div>
 
                 <div class="gallery-cta">
@@ -718,6 +980,9 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+
+    <!-- Blossom Carousel Web Component UMD -->
+    <script defer src="https://unpkg.com/@blossom-carousel/web/dist/blossom-carousel-web.umd.js"></script>
 
     <!-- Main JavaScript Logic -->
     <script src="app.js"></script>

@@ -13,6 +13,48 @@
       "skillPath": "skills/apple-design/SKILL.md",
       "computedHash": "0d19303902efa64eace10e6b183eb29ef3220d424c1a7fd1eafc52adde216932"
     },
+    "blossom-carousel-core": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "fa49fc3412b602646f8a45ee2e43dede990a98d98676b751d961256c6efdb6b1",
+      "wellKnownDigest": "sha256:7b509823f07cfa882fb6b3a666ee6a9d925a394f8fe9b7552f2b4d8927ada521"
+    },
+    "blossom-carousel-migration": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "ce702fcfa1ece23132b1ee33c956209cd9fef0f635f2cf9135c29b25a2557826",
+      "wellKnownDigest": "sha256:54b0b394f348d4fd8544258bc652235c33b12c2330d1211c143d57f98137b7d2"
+    },
+    "blossom-carousel-react": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "a099b8f1faac4d9cc68453ab1523953cdf2f2a14586e1f6966a9826016d83de5",
+      "wellKnownDigest": "sha256:5b7514fa08778d2f6c55a52e29c9a5ce4560082fef6bbdd4db47d8d003f67223"
+    },
+    "blossom-carousel-svelte": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "34486d8f6e8cf100e3c9eb333570df2a719ee19ba7d319c55228a67c0f3f5b41",
+      "wellKnownDigest": "sha256:504f429282ec81ac0070dc9f5b332920f75ccd836f0cdeb86e144a4f62c4f505"
+    },
+    "blossom-carousel-vue": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "5a8f8b6a1c5458140ebe1f790e761a7cc87392effc6fe2b0d7d27016afa47103",
+      "wellKnownDigest": "sha256:2ad7c2dee9383f4a549e9af6b9869aa6a65e289a4cdc84e5244589ca589f8dbd"
+    },
+    "blossom-carousel-web": {
+      "source": "blossom-carousel.com",
+      "sourceUrl": "https://www.blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "0b35d43a17b7152e3658f1f58d134f082c20c73801cd812fbaf0eeb1d132a479",
+      "wellKnownDigest": "sha256:c8bb51572b157298828158b56db1695971ae2805ce84b1d5d340dd57f44b3224"
+    },
     "emil-design-eng": {
       "source": "emilkowalski/skills",
       "sourceType": "github",
