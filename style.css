@@ -1077,11 +1077,38 @@ button, input, select, textarea {
     color: var(--text-main);
 }
 
+/* Studio Material & Finishing Preview Box Styling */
+.studio-preview-box {
+    min-height: 420px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.studio-preview-box .studio-bg-preview {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+@media (max-width: 768px) {
+    .studio-preview-box {
+        min-height: 260px !important;
+        height: 270px !important;
+        aspect-ratio: auto !important;
+        padding: 1.25rem !important;
+    }
+}
+
 /* --------------------------------------------------------------------------
    8. FORM CUSTOM ORDER & TECHNICAL SPECIFICATIONS
    -------------------------------------------------------------------------- */
 .calculator-card {
     padding: 2.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .calc-subtitle {
@@ -1096,10 +1123,20 @@ button, input, select, textarea {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2.8rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calc-col {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group {
     margin-bottom: 1.35rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-label {
@@ -1121,6 +1158,7 @@ button, input, select, textarea {
     color: #ffffff !important;
     font-size: var(--text-base) !important;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    box-sizing: border-box !important;
 }
 
 .form-select {
@@ -1147,6 +1185,8 @@ button, input, select, textarea {
 .form-row {
     display: flex;
     gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* File Upload Custom Dropzone */
@@ -1160,6 +1200,8 @@ button, input, select, textarea {
     transition: all var(--transition-normal);
     cursor: pointer;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .file-upload-dropzone:hover,
@@ -1222,6 +1264,7 @@ button, input, select, textarea {
     border-radius: var(--radius-sm);
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 .file-info-icon {
@@ -1301,6 +1344,9 @@ button, input, select, textarea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .result-display-grid {
@@ -1308,6 +1354,8 @@ button, input, select, textarea {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 1.8rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .result-item {
@@ -1316,6 +1364,7 @@ button, input, select, textarea {
     border-radius: var(--radius-md);
     padding: 1rem;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .result-label {
@@ -1340,6 +1389,8 @@ button, input, select, textarea {
     padding: 1.6rem;
     text-align: center;
     margin-bottom: 1.8rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .quotation-badge {
@@ -1368,6 +1419,102 @@ button, input, select, textarea {
     font-size: 0.86rem;
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+.calc-action-group {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calc-action-group .btn-wa {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1rem 1.2rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+}
+
+/* Smartphone & Mobile Breakpoint Overrides (320px - 768px) */
+@media (max-width: 768px) {
+    .calculator-card {
+        padding: 1.25rem 1rem !important;
+        border-radius: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .calc-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.8rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .form-row .col-4,
+    .form-row .col-6,
+    .form-row .form-group {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .calc-result-box {
+        padding: 1.25rem 1rem !important;
+        margin-top: 0.5rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .result-display-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        margin-bottom: 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .result-item {
+        padding: 0.75rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .quotation-info-box {
+        padding: 1.1rem 0.85rem !important;
+        margin-bottom: 1.25rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .quotation-title {
+        font-size: 1.1rem !important;
+    }
+
+    .quotation-desc {
+        font-size: 0.8rem !important;
+    }
+
+    .calc-subtitle {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .calc-action-group .btn-wa {
+        font-size: 0.88rem !important;
+        padding: 0.85rem 0.75rem !important;
+    }
 }
 
 /* --------------------------------------------------------------------------
