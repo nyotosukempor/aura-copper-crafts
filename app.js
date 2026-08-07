@@ -217,12 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const previewBgEl = studioSection.querySelector('.glass-card > div.bg-cover');
 
         const materialImages = {
-            'Tembaga-Polos Mulus': 'assets/products/studio_preview_copper_bowl.jpg',
-            'Tembaga-Babat Acak': 'assets/products/prod-02.jpg',
-            'Tembaga-Babat Teratur': 'assets/products/prod-01.jpg',
-            'Kuningan-Polos Mulus': 'assets/products/chandelier_brass_shiny.png',
-            'Kuningan-Babat Acak': 'assets/products/prod-06.jpg',
-            'Kuningan-Babat Teratur': 'assets/products/prod-09.jpg'
+            'Tembaga-Polos Mulus': 'assets/products/copper_catering_set.png',
+            'Tembaga-Babat Acak': 'assets/products/handcrafted_copper_wall.png',
+            'Tembaga-Babat Teratur': 'assets/products/copper_wall_relief.png',
+            'Kuningan-Polos Mulus': 'assets/products/golden_brass_catering.png',
+            'Kuningan-Babat Acak': 'assets/products/golden_leaf_wall.png',
+            'Kuningan-Babat Teratur': 'assets/products/large_golden_brass.png'
         };
 
         function updateStudioPreview() {
