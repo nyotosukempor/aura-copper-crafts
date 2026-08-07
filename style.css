@@ -1589,12 +1589,13 @@ button, input, select, textarea {
 
 .gallery-blossom-carousel {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding: 1rem 0.35rem 2rem 0.35rem;
+    touch-action: pan-y;
+    padding: 1rem 0.35rem 1.8rem 0.35rem;
     scrollbar-width: none;
 }
 
@@ -1787,20 +1788,36 @@ button, input, select, textarea {
 .custom-nav-btn.prev { left: -14px; }
 .custom-nav-btn.next { right: -14px; }
 
-/* Custom Thumbnail Dots Container & Indicator Buttons */
+/* Scrollable Horizontal Thumbnail Dots Container */
 #gallery-thumbs {
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 24px;
-    padding: 0 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    scrollbar-width: none;
+    margin-top: 20px;
+    padding: 6px 4px;
+    max-width: 100%;
+}
+
+#gallery-thumbs::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    #gallery-thumbs {
+        justify-content: center;
+    }
 }
 
 .custom-thumb-btn {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid transparent;
@@ -1830,14 +1847,72 @@ button, input, select, textarea {
     opacity: 1;
     border-color: #F59E0B;
     box-shadow: 0 0 14px rgba(245, 158, 11, 0.55), 0 4px 16px rgba(217, 119, 54, 0.4);
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Smartphone & Touch Mobile Screen Optimizations (320px - 768px) */
 @media (max-width: 768px) {
-    .custom-nav-btn.prev { left: 4px; }
-    .custom-nav-btn.next { right: 4px; }
-    .custom-nav-btn { width: 40px; height: 40px; font-size: 0.95rem; }
-    .custom-thumb-btn { width: 48px; height: 48px; border-radius: 8px; }
+    .custom-nav-btn {
+        display: none !important;
+    }
+
+    .gallery-blossom-carousel {
+        gap: 12px;
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+        scroll-padding-left: 7.5%;
+        scroll-padding-right: 7.5%;
+    }
+
+    .gallery-card {
+        flex: 0 0 85% !important;
+        width: 85% !important;
+        min-width: 85% !important;
+        max-width: 85% !important;
+        scroll-snap-align: center !important;
+    }
+
+    .gallery-img-wrapper {
+        height: 200px;
+    }
+
+    .gallery-card .card-info {
+        padding: 1rem;
+    }
+
+    .gallery-card .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .gallery-card .card-spec {
+        font-size: 0.75rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .gallery-card .badge {
+        top: 0.75rem;
+        left: 0.75rem;
+        font-size: 0.68rem;
+        padding: 0.25rem 0.65rem;
+    }
+
+    .btn-quick-view, .gallery-card .btn-wa {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    #gallery-thumbs {
+        gap: 8px;
+        margin-top: 16px;
+        padding: 4px 8px;
+    }
+
+    .custom-thumb-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+    }
 }
 
 .btn-blossom-arrow:hover {
