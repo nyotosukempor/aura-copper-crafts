@@ -1,0 +1,10 @@
+{
+  "userIgnoreFilters": [
+    "node_modules/",
+    ".git/",
+    ".agents/skills/"
+  ],
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "assets"
+}

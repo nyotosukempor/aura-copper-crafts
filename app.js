@@ -139,57 +139,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // Category default fallbacks
     const categoryDefaults = {
         bathtub: 'assets/products/bathtub_copper_antique.png',
-        chandelier: 'assets/products/chandelier_brass_shiny.png',
+        chandelier: 'assets/products/golden_brass_chandelier.png',
         sink: 'assets/products/sink_copper_green.png',
-        relief: 'assets/products/relief_copper_etched.png',
+        relief: 'assets/products/copper_wall_relief.png',
         dome: 'assets/products/dome_brass_polished.png',
-        table: 'assets/products/prod-03.jpg',
-        vase: 'assets/products/prod-05.jpg'
+        table: 'assets/products/copper_catering_set.png',
+        vase: 'assets/products/large_golden_brass.png'
     };
 
     // Photo matrix lookup table for real AI product assets
     const photoMatrix = {
         bathtub: {
-            copper: { polished: 'assets/products/prod-04.jpg', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-01.jpg', raw: 'assets/products/bathtub_copper_antique.png' },
-            brass: { polished: 'assets/products/prod-06.jpg', antique: 'assets/products/prod-07.jpg', green: 'assets/products/prod-07.jpg', satin: 'assets/products/prod-06.jpg', raw: 'assets/products/prod-06.jpg' },
-            bronze: { polished: 'assets/products/bathtub_copper_antique.png', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-05.jpg', raw: 'assets/products/prod-05.jpg' },
-            dual: { polished: 'assets/products/prod-06.jpg', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-03.jpg', raw: 'assets/products/prod-05.jpg' }
+            copper: { polished: 'assets/products/bathtub_copper_antique.png', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/bathtub_copper_antique.png', raw: 'assets/products/bathtub_copper_antique.png' },
+            brass: { polished: 'assets/products/bathtub_copper_antique.png', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/bathtub_copper_antique.png', satin: 'assets/products/bathtub_copper_antique.png', raw: 'assets/products/bathtub_copper_antique.png' },
+            bronze: { polished: 'assets/products/bathtub_copper_antique.png', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/bathtub_copper_antique.png', raw: 'assets/products/bathtub_copper_antique.png' },
+            dual: { polished: 'assets/products/bathtub_copper_antique.png', antique: 'assets/products/bathtub_copper_antique.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/bathtub_copper_antique.png', raw: 'assets/products/bathtub_copper_antique.png' }
         },
         chandelier: {
-            copper: { polished: 'assets/products/prod-08.jpg', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/prod-08.jpg', raw: 'assets/products/prod-08.jpg' },
-            brass: { polished: 'assets/products/chandelier_brass_shiny.png', antique: 'assets/products/prod-09.jpg', green: 'assets/products/prod-09.jpg', satin: 'assets/products/chandelier_brass_shiny.png', raw: 'assets/products/prod-09.jpg' },
-            bronze: { polished: 'assets/products/chandelier_brass_shiny.png', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/chandelier_brass_shiny.png', raw: 'assets/products/prod-08.jpg' },
-            dual: { polished: 'assets/products/chandelier_brass_shiny.png', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/chandelier_brass_shiny.png', raw: 'assets/products/prod-08.jpg' }
+            copper: { polished: 'assets/products/golden_brass_chandelier.png', antique: 'assets/products/golden_brass_chandelier.png', green: 'assets/products/golden_brass_chandelier.png', satin: 'assets/products/golden_brass_chandelier.png', raw: 'assets/products/golden_brass_chandelier.png' },
+            brass: { polished: 'assets/products/golden_brass_chandelier.png', antique: 'assets/products/golden_brass_chandelier.png', green: 'assets/products/golden_brass_chandelier.png', satin: 'assets/products/golden_brass_chandelier.png', raw: 'assets/products/golden_brass_chandelier.png' },
+            bronze: { polished: 'assets/products/golden_brass_chandelier.png', antique: 'assets/products/golden_brass_chandelier.png', green: 'assets/products/golden_brass_chandelier.png', satin: 'assets/products/golden_brass_chandelier.png', raw: 'assets/products/golden_brass_chandelier.png' },
+            dual: { polished: 'assets/products/golden_brass_chandelier.png', antique: 'assets/products/golden_brass_chandelier.png', green: 'assets/products/golden_brass_chandelier.png', satin: 'assets/products/golden_brass_chandelier.png', raw: 'assets/products/golden_brass_chandelier.png' }
         },
         sink: {
-            copper: { polished: 'assets/products/prod-04.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-04.jpg', raw: 'assets/products/sink_copper_green.png' },
-            brass: { polished: 'assets/products/prod-06.jpg', antique: 'assets/products/prod-07.jpg', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-06.jpg', raw: 'assets/products/prod-06.jpg' },
-            bronze: { polished: 'assets/products/prod-02.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-05.jpg', raw: 'assets/products/prod-05.jpg' },
-            dual: { polished: 'assets/products/prod-06.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-04.jpg', raw: 'assets/products/prod-05.jpg' }
+            copper: { polished: 'assets/products/sink_copper_green.png', antique: 'assets/products/sink_copper_green.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/sink_copper_green.png', raw: 'assets/products/sink_copper_green.png' },
+            brass: { polished: 'assets/products/sink_copper_green.png', antique: 'assets/products/sink_copper_green.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/sink_copper_green.png', raw: 'assets/products/sink_copper_green.png' },
+            bronze: { polished: 'assets/products/sink_copper_green.png', antique: 'assets/products/sink_copper_green.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/sink_copper_green.png', raw: 'assets/products/sink_copper_green.png' },
+            dual: { polished: 'assets/products/sink_copper_green.png', antique: 'assets/products/sink_copper_green.png', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/sink_copper_green.png', raw: 'assets/products/sink_copper_green.png' }
         },
         relief: {
-            copper: { polished: 'assets/products/relief_copper_etched.png', antique: 'assets/products/prod-13.jpg', green: 'assets/products/prod-13.jpg', satin: 'assets/products/relief_copper_etched.png', raw: 'assets/products/relief_copper_etched.png' },
-            brass: { polished: 'assets/products/prod-14.jpg', antique: 'assets/products/prod-14.jpg', green: 'assets/products/prod-14.jpg', satin: 'assets/products/prod-14.jpg', raw: 'assets/products/prod-14.jpg' },
-            bronze: { polished: 'assets/products/relief_copper_etched.png', antique: 'assets/products/prod-13.jpg', green: 'assets/products/prod-13.jpg', satin: 'assets/products/relief_copper_etched.png', raw: 'assets/products/relief_copper_etched.png' },
-            dual: { polished: 'assets/products/prod-14.jpg', antique: 'assets/products/prod-13.jpg', green: 'assets/products/prod-13.jpg', satin: 'assets/products/prod-14.jpg', raw: 'assets/products/prod-13.jpg' }
+            copper: { polished: 'assets/products/copper_wall_relief.png', antique: 'assets/products/ornate_copper.png', green: 'assets/products/handcrafted_copper_wall.png', satin: 'assets/products/copper_wall_relief.png', raw: 'assets/products/copper_wall_relief.png' },
+            brass: { polished: 'assets/products/gold_door_relief_from.png', antique: 'assets/products/golden_leaf_wall.png', green: 'assets/products/gold_door_relief_from.png', satin: 'assets/products/gold_door_relief_from.png', raw: 'assets/products/gold_door_relief_from.png' },
+            bronze: { polished: 'assets/products/copper_wall_relief.png', antique: 'assets/products/ornate_copper.png', green: 'assets/products/handcrafted_copper_wall.png', satin: 'assets/products/copper_wall_relief.png', raw: 'assets/products/copper_wall_relief.png' },
+            dual: { polished: 'assets/products/gold_door_relief_from.png', antique: 'assets/products/ornate_copper.png', green: 'assets/products/ornate_copper.png', satin: 'assets/products/gold_door_relief_from.png', raw: 'assets/products/ornate_copper.png' }
         },
         dome: {
-            copper: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/prod-08.jpg' },
-            brass: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/prod-09.jpg', green: 'assets/products/prod-09.jpg', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/prod-09.jpg' },
-            bronze: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/prod-08.jpg' },
-            dual: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/prod-08.jpg', green: 'assets/products/prod-08.jpg', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/prod-08.jpg' }
+            copper: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/dome_brass_polished.png', green: 'assets/products/dome_brass_polished.png', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/dome_brass_polished.png' },
+            brass: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/dome_brass_polished.png', green: 'assets/products/dome_brass_polished.png', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/dome_brass_polished.png' },
+            bronze: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/dome_brass_polished.png', green: 'assets/products/dome_brass_polished.png', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/dome_brass_polished.png' },
+            dual: { polished: 'assets/products/dome_brass_polished.png', antique: 'assets/products/dome_brass_polished.png', green: 'assets/products/dome_brass_polished.png', satin: 'assets/products/dome_brass_polished.png', raw: 'assets/products/dome_brass_polished.png' }
         },
         table: {
-            copper: { polished: 'assets/products/prod-03.jpg', antique: 'assets/products/prod-05.jpg', green: 'assets/products/prod-02.jpg', satin: 'assets/products/prod-03.jpg', raw: 'assets/products/prod-05.jpg' },
-            brass: { polished: 'assets/products/prod-07.jpg', antique: 'assets/products/prod-07.jpg', green: 'assets/products/prod-07.jpg', satin: 'assets/products/prod-07.jpg', raw: 'assets/products/prod-07.jpg' },
-            bronze: { polished: 'assets/products/prod-05.jpg', antique: 'assets/products/prod-05.jpg', green: 'assets/products/prod-05.jpg', satin: 'assets/products/prod-05.jpg', raw: 'assets/products/prod-05.jpg' },
-            dual: { polished: 'assets/products/prod-07.jpg', antique: 'assets/products/prod-03.jpg', green: 'assets/products/prod-05.jpg', satin: 'assets/products/prod-07.jpg', raw: 'assets/products/prod-03.jpg' }
+            copper: { polished: 'assets/products/copper_catering_set.png', antique: 'assets/products/copper_catering_set.png', green: 'assets/products/copper_catering_set.png', satin: 'assets/products/copper_catering_set.png', raw: 'assets/products/copper_catering_set.png' },
+            brass: { polished: 'assets/products/golden_brass_catering.png', antique: 'assets/products/golden_brass_catering.png', green: 'assets/products/golden_brass_catering.png', satin: 'assets/products/golden_brass_catering.png', raw: 'assets/products/golden_brass_catering.png' },
+            bronze: { polished: 'assets/products/copper_catering_set.png', antique: 'assets/products/copper_catering_set.png', green: 'assets/products/copper_catering_set.png', satin: 'assets/products/copper_catering_set.png', raw: 'assets/products/copper_catering_set.png' },
+            dual: { polished: 'assets/products/golden_brass_catering.png', antique: 'assets/products/copper_catering_set.png', green: 'assets/products/copper_catering_set.png', satin: 'assets/products/golden_brass_catering.png', raw: 'assets/products/copper_catering_set.png' }
         },
         vase: {
-            copper: { polished: 'assets/products/prod-04.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/sink_copper_green.png', satin: 'assets/products/prod-01.jpg', raw: 'assets/products/prod-05.jpg' },
-            brass: { polished: 'assets/products/prod-15.jpg', antique: 'assets/products/prod-06.jpg', green: 'assets/products/prod-06.jpg', satin: 'assets/products/prod-15.jpg', raw: 'assets/products/prod-06.jpg' },
-            bronze: { polished: 'assets/products/prod-02.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/prod-02.jpg', satin: 'assets/products/prod-02.jpg', raw: 'assets/products/prod-05.jpg' },
-            dual: { polished: 'assets/products/prod-15.jpg', antique: 'assets/products/prod-02.jpg', green: 'assets/products/prod-02.jpg', satin: 'assets/products/prod-01.jpg', raw: 'assets/products/prod-05.jpg' }
+            copper: { polished: 'assets/products/large_golden_brass.png', antique: 'assets/products/large_golden_brass.png', green: 'assets/products/large_golden_brass.png', satin: 'assets/products/large_golden_brass.png', raw: 'assets/products/large_golden_brass.png' },
+            brass: { polished: 'assets/products/large_golden_brass.png', antique: 'assets/products/large_golden_brass.png', green: 'assets/products/large_golden_brass.png', satin: 'assets/products/large_golden_brass.png', raw: 'assets/products/large_golden_brass.png' },
+            bronze: { polished: 'assets/products/large_golden_brass.png', antique: 'assets/products/large_golden_brass.png', green: 'assets/products/large_golden_brass.png', satin: 'assets/products/large_golden_brass.png', raw: 'assets/products/large_golden_brass.png' },
+            dual: { polished: 'assets/products/large_golden_brass.png', antique: 'assets/products/large_golden_brass.png', green: 'assets/products/large_golden_brass.png', satin: 'assets/products/large_golden_brass.png', raw: 'assets/products/large_golden_brass.png' }
         }
     };
 
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `- Tekstur Permukaan: ${labels.texture[state.texture] || state.texture}\n\n` +
                 `Mohon diinfokan ketersediaan, waktu pengerjaan, dan estimasi biayanya. Terima kasih.`
             );
-            btnApply.setAttribute('href', `https://wa.me/6281332804773?text=${waText}`);
+            btnApply.setAttribute('href', `https://wa.me/6281234567890?text=${waText}`);
             btnApply.setAttribute('target', '_blank');
             btnApply.setAttribute('rel', 'noopener');
         }
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `Mohon diinfokan ketersediaan, waktu pengerjaan, dan estimasi biayanya. Terima kasih.`
             );
 
-            btnApply.href = `https://wa.me/6281332804773?text=${waText}`;
+            btnApply.href = `https://wa.me/6281234567890?text=${waText}`;
         });
     }
 
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         const btnWa = document.getElementById('btn-whatsapp-quote');
-        if (btnWa) btnWa.href = `https://wa.me/6281332804773?text=${waMsg}`;
+        if (btnWa) btnWa.href = `https://wa.me/6281234567890?text=${waMsg}`;
     }
 
     calculate();
@@ -567,18 +567,15 @@ document.addEventListener('DOMContentLoaded', () => {
        5. PRODUCTS CATALOG SYSTEM & FILTERS
        -------------------------------------------------------------------------- */
     const products = [
-        { id: '1',  title: 'Set Prasmanan Tembaga Ukir Tradisional', category: 'decor',      desc: 'Set prasmanan tembaga ukir lengkap dengan frame oval artistik dan motif flora klasik Boyolali.', material: 'Tembaga Murni 99.9%', finish: 'Rose Copper Polished', dims: 'Set 6 pcs', img: 'assets/products/prod-01.jpg' },
-        { id: '2',  title: 'Set Kendil Ukir Tembaga Antik',         category: 'decor',      desc: 'Kendil tembaga ukir khas Jawa dengan tutup berpegangan dan kaki ornamen berlubang tembus.', material: 'Tembaga Murni 99.9%', finish: 'Antique Copper Patina', dims: 'Set 4 pcs', img: 'assets/products/prod-02.jpg' },
-        { id: '3',  title: 'Chafing Dish Prasmanan Persegi Ukir',   category: 'decor',      desc: 'Chafing dish persegi tembaga ukir motif bunga premium, cocok untuk hotel dan catering mewah.', material: 'Tembaga Murni', finish: 'Polished Copper', dims: '45 x 35 x 40 cm', img: 'assets/products/prod-03.jpg' },
-        { id: '4',  title: 'Set Mangkuk Hammered Copper Polished',  category: 'decor',      desc: 'Satu set mangkuk tembaga hammered finish mengkilap dengan tutup kubah elegan, kualitas ekspor.', material: 'Tembaga Murni 99.9%', finish: 'Mirror Polished', dims: 'Set 8 pcs', img: 'assets/products/prod-04.jpg' },
-        { id: '5',  title: 'Kendil Tembaga Hammered Outdoor Grill', category: 'decor',      desc: 'Kendil tembaga hammered besar untuk outdoor barbecue, kolam dan dekorasi taman.', material: 'Tembaga Murni 1.2mm', finish: 'Hammered Natural', dims: 'Ø 50 x 80 cm', img: 'assets/products/prod-05.jpg' },
-        { id: '6',  title: 'Set Prasmanan Brass Gold Premium',      category: 'decor',      desc: 'Set prasmanan kuningan emas berkilau dengan ukiran kaligrafi, ideal untuk acara pernikahan mewah.', material: 'Kuningan Impor Class A', finish: 'Gold Polished', dims: 'Set 6 pcs', img: 'assets/products/prod-06.jpg' },
-        { id: '7',  title: 'Set Prasmanan Brass 3-Burner Premium',  category: 'decor',      desc: 'Set prasmanan kuningan 3 burner lengkap dengan rangka dan tutup kubah mewah, untuk ballroom hotel.', material: 'Kuningan Impor Class A', finish: 'High Gloss Gold', dims: 'Set lengkap', img: 'assets/products/prod-07.jpg' },
-        { id: '8',  title: 'Lampu Chandelier Masjid Tembaga Ukir', category: 'chandelier', desc: 'Chandelier masjid tembaga ukir motif sulur dengan sembilan lengan dan rosette tengah mewah.', material: 'Tembaga Murni', finish: 'Antique Rose Copper', dims: 'Ø 180 cm', img: 'assets/products/prod-08.jpg' },
-        { id: '9',  title: 'Lampu Chandelier Kuningan Klasik Mewah', category: 'chandelier', desc: 'Lampu chandelier kuningan 16-cabang dengan arm spiral elegan untuk ballroom, restoran fine-dining.', material: 'Kuningan Impor Class A', finish: 'Antique Burnished Gold', dims: 'Ø 250 cm, 16-arm', img: 'assets/products/prod-09.jpg' },
-        { id: '10', title: 'Cermin Tembaga Ukir Oval Antique',     category: 'relief',     desc: 'Bingkai cermin oval tembaga ukir motif floral klasik dengan patina hitam antik berkesan mewah.', material: 'Tembaga Red-Copper', finish: 'Burnished Black Antique', dims: '80 x 110 cm', img: 'assets/products/prod-13.jpg' },
-        { id: '11', title: 'Relief Pintu Kabah Kuningan Framed',   category: 'relief',     desc: 'Replika relief Pintu Kabah dalam bingkai mewah dari kuningan emas, dilengkapi kaligrafi detail.', material: 'Kuningan Impor', finish: 'Gold Polish', dims: '60 x 85 cm', img: 'assets/products/prod-14.jpg' },
-        { id: '12', title: 'Jam Dinding Kuningan Dekoratif',        category: 'decor',      desc: 'Jam dinding kuningan artistik dengan ornamen bunga timbul dan ring lingkar ganda, cocok untuk foyer.', material: 'Kuningan Impor', finish: 'Gold Polished', dims: '70 x 130 cm', img: 'assets/products/prod-15.jpg' }
+        { id: '1', title: 'Set Prasmanan Tembaga Premium', category: 'decor', desc: 'Set prasmanan tembaga mewah dengan detail ukiran, cocok untuk catering dan hotel.', material: 'Tembaga Murni 99.9%', finish: 'Polished Copper', dims: 'Set Lengkap', img: 'assets/products/copper_catering_set.png' },
+        { id: '2', title: 'Relief Dinding Tembaga Ukir', category: 'relief', desc: 'Relief dinding tembaga dengan patina antik, mengusung nuansa klasik Jawa yang elegan.', material: 'Tembaga Murni', finish: 'Antique Copper Patina', dims: 'Custom', img: 'assets/products/copper_wall_relief.png' },
+        { id: '3', title: 'Relief Pintu Kuningan Emas', category: 'relief', desc: 'Relief pintu kuningan berlapis emas untuk menghiasi masjid atau rumah mewah.', material: 'Kuningan Class A', finish: 'Gold Polished', dims: 'Custom', img: 'assets/products/gold_door_relief_from.png' },
+        { id: '4', title: 'Set Prasmanan Kuningan Emas', category: 'decor', desc: 'Set prasmanan kuningan emas berkilau tinggi, ideal untuk acara pernikahan megah.', material: 'Kuningan Class A', finish: 'High Gloss Gold', dims: 'Set Lengkap', img: 'assets/products/golden_brass_catering.png' },
+        { id: '5', title: 'Chandelier Kuningan Klasik', category: 'chandelier', desc: 'Chandelier kuningan klasik dengan gaya mewah untuk ballroom dan masjid besar.', material: 'Kuningan Artisanal', finish: 'Antique Burnished Gold', dims: 'Custom', img: 'assets/products/golden_brass_chandelier.png' },
+        { id: '6', title: 'Hiasan Dinding Daun Kuningan', category: 'relief', desc: 'Hiasan dinding kuningan berbentuk daun untuk dekorasi dinding foyer yang mewah.', material: 'Kuningan Class A', finish: 'Gold Polished', dims: 'Custom', img: 'assets/products/golden_leaf_wall.png' },
+        { id: '7', title: 'Hiasan Dinding Tembaga Handcrafted', category: 'relief', desc: 'Hiasan dinding eksotis dari tembaga murni dengan tekstur tempa alami.', material: 'Tembaga Murni 99.9%', finish: 'Hammered Natural', dims: 'Custom', img: 'assets/products/handcrafted_copper_wall.png' },
+        { id: '8', title: 'Dekorasi Kuningan Emas Besar', category: 'decor', desc: 'Dekorasi statement piece kuningan berukuran besar untuk ruang utama.', material: 'Kuningan Class A', finish: 'High Gloss Gold', dims: 'Custom', img: 'assets/products/large_golden_brass.png' },
+        { id: '9', title: 'Ornamen Tembaga Ukir Klasik', category: 'relief', desc: 'Ornamen seni ukir klasik tembaga dengan sentuhan akhir burnished black antique.', material: 'Tembaga Murni', finish: 'Burnished Black Antique', dims: 'Custom', img: 'assets/products/ornate_copper.png' }
     ];
 
     const catalogGrid = document.getElementById('products-grid');
@@ -647,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div style="margin-bottom:0.4rem;"><strong style="color:var(--copper-light);">Finishing:</strong> ${prod.finish}</div>
                                 <div><strong style="color:var(--copper-light);">Dimensi:</strong> ${prod.dims}</div>
                             </div>
-                            <a href="https://wa.me/6281332804773?text=${encodeURIComponent('Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk produk:\n- Nama Produk: ' + prod.title + '\n- Material: ' + prod.material + '\n- Finishing: ' + prod.finish + '\n- Dimensi: ' + prod.dims + '\n\nMohon informasi penawaran harga resmi dan ketersediaannya. Terima kasih.')}" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
+                            <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk produk:\n- Nama Produk: ' + prod.title + '\n- Material: ' + prod.material + '\n- Finishing: ' + prod.finish + '\n- Dimensi: ' + prod.dims + '\n\nMohon informasi penawaran harga resmi dan ketersediaannya. Terima kasih.')}" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
                                 <i class="fa-brands fa-whatsapp"></i> Minta Penawaran Harga via WhatsApp
                             </a>
                         </div>`;
@@ -780,7 +777,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div style="margin-bottom:0.4rem;"><strong style="color:var(--copper-light);">Finishing:</strong> ${prod.finish}</div>
                                 <div><strong style="color:var(--copper-light);">Dimensi:</strong> ${prod.dims}</div>
                             </div>
-                            <a href="https://wa.me/6281332804773?text=${encodeURIComponent('Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk produk:\n- Nama Produk: ' + prod.title + '\n- Material: ' + prod.material + '\n- Finishing: ' + prod.finish + '\n- Dimensi: ' + prod.dims + '\n\nMohon informasi penawaran harga resmi dan ketersediaannya. Terima kasih.')}" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
+                            <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk produk:\n- Nama Produk: ' + prod.title + '\n- Material: ' + prod.material + '\n- Finishing: ' + prod.finish + '\n- Dimensi: ' + prod.dims + '\n\nMohon informasi penawaran harga resmi dan ketersediaannya. Terima kasih.')}" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg btn-wa">
                                 <i class="fa-brands fa-whatsapp"></i> Minta Penawaran via WhatsApp
                             </a>
                         </div>`;
