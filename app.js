@@ -63,6 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const headerCartBtn = document.getElementById('btn-header-cart');
+    if (headerCartBtn) {
+        headerCartBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const catalogSec = document.getElementById('katalog');
+            if (catalogSec) {
+                catalogSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     /* --------------------------------------------------------------------------
        2. HERO SPARK PARTICLES CANVAS (PERFORMANCE OPTIMIZED)
        -------------------------------------------------------------------------- */
@@ -192,83 +203,64 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'assets/products/prod-01.jpg';
     }
 
-    // Comprehensive Event Listeners for All Control Elements
-    const customizerPanel = document.querySelector('.customizer-panel');
-    if (customizerPanel) {
-        // Product Selector Buttons
-        customizerPanel.querySelectorAll('.btn-select-product').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                customizerPanel.querySelectorAll('.btn-select-product').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                state.product = btn.dataset.product;
-                updateCustomizerPreview();
-            });
-        });
+    /* --------------------------------------------------------------------------
+       3. STITCH STUDIO SECTION INTERACTIVE HANDLER (MATERIAL & TEXTURE VISUALIZER)
+       -------------------------------------------------------------------------- */
+    const studioSection = document.getElementById('studio');
+    if (studioSection) {
+        let currentMaterial = 'Tembaga';
+        let currentTexture = 'Polos Mulus';
 
-        // Material Radio Cards
-        customizerPanel.querySelectorAll('.radio-card').forEach(card => {
-            const input = card.querySelector('input[name="material"]');
-            if (input) {
-                const handleMaterialChange = () => {
-                    customizerPanel.querySelectorAll('.radio-card').forEach(c => c.classList.remove('active'));
-                    card.classList.add('active');
-                    input.checked = true;
-                    state.material = input.value;
-                    updateCustomizerPreview();
-                };
-                card.addEventListener('click', handleMaterialChange);
-                input.addEventListener('change', handleMaterialChange);
+        const materialBtns = studioSection.querySelectorAll('div > .flex > button');
+        const textureBtns = studioSection.querySelectorAll('div > .grid > button');
+        const previewTextEl = studioSection.querySelector('.glass-panel span.font-semibold');
+        const previewBgEl = studioSection.querySelector('.glass-card > div.bg-cover');
+
+        const materialImages = {
+            'Tembaga-Polos Mulus': 'assets/products/studio_preview_copper_bowl.jpg',
+            'Tembaga-Babat Acak': 'assets/products/prod-02.jpg',
+            'Tembaga-Babat Teratur': 'assets/products/prod-01.jpg',
+            'Kuningan-Polos Mulus': 'assets/products/chandelier_brass_shiny.png',
+            'Kuningan-Babat Acak': 'assets/products/prod-06.jpg',
+            'Kuningan-Babat Teratur': 'assets/products/prod-09.jpg'
+        };
+
+        function updateStudioPreview() {
+            if (previewTextEl) {
+                previewTextEl.textContent = `${currentMaterial} - ${currentTexture}`;
             }
-        });
+            if (previewBgEl) {
+                const key = `${currentMaterial}-${currentTexture}`;
+                const bgUrl = materialImages[key] || materialImages['Tembaga-Polos Mulus'];
+                previewBgEl.style.backgroundImage = `url('${bgUrl}')`;
+            }
+        }
 
-        // Finish Swatch Buttons
-        customizerPanel.querySelectorAll('.swatch-btn').forEach(btn => {
+        materialBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                customizerPanel.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                state.finish = btn.dataset.finish;
-                updateCustomizerPreview();
-            });
-        });
-
-        // Texture Buttons
-        customizerPanel.querySelectorAll('.btn-texture').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                customizerPanel.querySelectorAll('.btn-texture').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                state.texture = btn.dataset.texture;
-                updateCustomizerPreview();
-            });
-        });
-    }
-
-    // Reset Studio Button
-    const resetBtn = document.getElementById('reset-customizer');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            state.product = 'bathtub';
-            state.material = 'copper';
-            state.finish = 'polished';
-            state.texture = 'hammered';
-
-            if (customizerPanel) {
-                customizerPanel.querySelectorAll('.btn-select-product').forEach(b => b.classList.toggle('active', b.dataset.product === 'bathtub'));
-                customizerPanel.querySelectorAll('.swatch-btn').forEach(b => b.classList.toggle('active', b.dataset.finish === 'polished'));
-                customizerPanel.querySelectorAll('.btn-texture').forEach(b => b.classList.toggle('active', b.dataset.texture === 'hammered'));
-                customizerPanel.querySelectorAll('.radio-card').forEach(c => {
-                    const radio = c.querySelector('input');
-                    if (radio) {
-                        radio.checked = radio.value === 'copper';
-                        c.classList.toggle('active', radio.value === 'copper');
-                    }
+                materialBtns.forEach(b => {
+                    b.className = 'px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all font-medium';
                 });
-            }
+                btn.className = 'px-6 py-3 rounded-full bg-primary/20 border border-primary text-primary font-label-md text-label-md transition-all font-medium';
+                currentMaterial = btn.textContent.trim();
+                updateStudioPreview();
+            });
+        });
 
-            updateCustomizerPreview();
+        textureBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                textureBtns.forEach(b => b.classList.remove('border-primary'));
+                btn.classList.add('border-primary');
+                const titleSpan = btn.querySelector('span.font-semibold');
+                if (titleSpan) {
+                    currentTexture = titleSpan.textContent.trim();
+                } else {
+                    currentTexture = btn.textContent.trim();
+                }
+                updateStudioPreview();
+            });
         });
     }
 
@@ -376,6 +368,143 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --------------------------------------------------------------------------
        4. FORM CUSTOM ORDER & TECHNICAL SPECIFICATIONS LOGIC
        -------------------------------------------------------------------------- */
+    let currentUploadedFile = null;
+
+    const allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'pdf', 'dwg', 'dxf', 'ai', 'zip', 'rar'];
+    const forbiddenExtensions = ['exe', 'js', 'php', 'sh', 'bat', 'vbs', 'html', 'htm', 'phtml', 'py', 'pl', 'jar', 'cmd', 'ps1', 'scr', 'dll'];
+    const maxFileSize = 10 * 1024 * 1024; // 10 MB
+
+    const fileInput = document.getElementById('calc-file-upload');
+    const fileDropzone = document.getElementById('file-dropzone');
+    const dropzoneContent = document.getElementById('dropzone-content');
+    const filePreviewCard = document.getElementById('file-preview-card');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const fileSizeDisplay = document.getElementById('file-size-display');
+    const fileTypeIcon = document.getElementById('file-type-icon');
+    const btnRemoveFile = document.getElementById('btn-remove-file');
+    const fileErrorBox = document.getElementById('file-upload-error');
+    const fileErrorMsg = document.getElementById('file-error-msg');
+
+    function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    function showFileError(msg) {
+        if (fileErrorBox && fileErrorMsg) {
+            fileErrorMsg.textContent = msg;
+            fileErrorBox.classList.remove('hidden');
+        }
+        resetFileSelection();
+    }
+
+    function clearFileError() {
+        if (fileErrorBox) {
+            fileErrorBox.classList.add('hidden');
+        }
+    }
+
+    function resetFileSelection() {
+        currentUploadedFile = null;
+        if (fileInput) fileInput.value = '';
+        if (dropzoneContent) dropzoneContent.classList.remove('hidden');
+        if (filePreviewCard) filePreviewCard.classList.add('hidden');
+        calculate();
+    }
+
+    function validateAndProcessFile(file) {
+        clearFileError();
+        if (!file) return;
+
+        const ext = file.name.split('.').pop().toLowerCase();
+        
+        // Security Filter 1: Express Forbidden Extensions
+        if (forbiddenExtensions.includes(ext)) {
+            showFileError(`Sistem keamanan menolak file (${ext.toUpperCase()}). Format executable / script tidak diizinkan!`);
+            return;
+        }
+
+        // Security Filter 2: Allowed List
+        if (!allowedExtensions.includes(ext)) {
+            showFileError(`Format .${ext} tidak diizinkan. Harap gunakan format: JPG, PNG, WEBP, PDF, DWG, DXF, AI, ZIP/RAR.`);
+            return;
+        }
+
+        // Security Filter 3: File Size
+        if (file.size > maxFileSize) {
+            showFileError(`Ukuran file (${formatBytes(file.size)}) melebihi batas maksimum 10 MB.`);
+            return;
+        }
+
+        // If valid file
+        currentUploadedFile = {
+            name: file.name,
+            sizeStr: formatBytes(file.size),
+            ext: ext
+        };
+
+        // Dynamic File Icon
+        let iconClass = 'fa-solid fa-file-image';
+        if (['pdf'].includes(ext)) iconClass = 'fa-solid fa-file-pdf';
+        else if (['dwg', 'dxf', 'ai'].includes(ext)) iconClass = 'fa-solid fa-drafting-compass';
+        else if (['zip', 'rar'].includes(ext)) iconClass = 'fa-solid fa-file-zipper';
+
+        if (fileTypeIcon) fileTypeIcon.innerHTML = `<i class="${iconClass}"></i>`;
+        if (fileNameDisplay) fileNameDisplay.textContent = file.name;
+        if (fileSizeDisplay) fileSizeDisplay.textContent = currentUploadedFile.sizeStr;
+
+        if (dropzoneContent) dropzoneContent.classList.add('hidden');
+        if (filePreviewCard) filePreviewCard.classList.remove('hidden');
+
+        calculate();
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files[0]) {
+                validateAndProcessFile(e.target.files[0]);
+            }
+        });
+    }
+
+    if (fileDropzone) {
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileDropzone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                fileDropzone.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileDropzone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                fileDropzone.classList.remove('dragover');
+            }, false);
+        });
+
+        fileDropzone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files && files[0]) {
+                validateAndProcessFile(files[0]);
+            }
+        });
+    }
+
+    if (btnRemoveFile) {
+        btnRemoveFile.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            clearFileError();
+            resetFileSelection();
+        });
+    }
+
     ['calc-product-type', 'calc-length', 'calc-width', 'calc-height', 'calc-thickness', 'calc-material-type']
         .forEach(id => {
             const el = document.getElementById(id);
@@ -410,6 +539,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const nameMap = { bathtub: 'Bak Mandi Tembaga', chandelier: 'Lampu Chandelier', sink: 'Wastafel Logam', relief: 'Relief Dinding', dome: 'Kubah Masjid', table: 'Meja Logam', vase: 'Vas / Decor' };
         const matMap = { copper: 'Tembaga Murni 99.9%', brass: 'Kuningan Gold Class A', bronze: 'Perunggu Bronze', dual: 'Dual-Tone (Tembaga+Kuningan)' };
         
+        let fileLine = ``;
+        if (currentUploadedFile) {
+            fileLine = `- Lampiran File Desain: [ADA] ${currentUploadedFile.name} (${currentUploadedFile.sizeStr})\n` +
+                       `  *(File sketsa/desain tersebut akan saya kirimkan langsung di chat WA ini)*\n`;
+        }
+
         // WhatsApp Message Format - Official Quotation Request
         const waMsg = encodeURIComponent(
             `Halo Admin Aura Copper, saya ingin meminta penawaran harga resmi untuk custom order berikut:\n` +
@@ -417,7 +552,8 @@ document.addEventListener('DOMContentLoaded', () => {
             `- Ukuran: ${lM*100} x ${wM*100} x ${hM*100} cm (${thick}mm)\n` +
             `- Jenis Material: ${matMap[mat] || mat}\n` +
             `- Estimasi Kebutuhan Plat: ${area.toFixed(2)} m²\n` +
-            `- Estimasi Berat: ${weight.toFixed(1)} kg\n\n` +
+            `- Estimasi Berat: ${weight.toFixed(1)} kg\n` +
+            fileLine + `\n` +
             `Mohon diinfokan penawaran harga resmi dan estimasi pengerjaannya. Terima kasih.`
         );
 
@@ -645,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    initTilt(document.querySelectorAll('.stat-card, .process-step-item'), {
+    initTilt(document.querySelectorAll('.stat-card, .process-step-item, .tilt-effect'), {
         max: 6, speed: 400, glare: true, 'max-glare': 0.12, perspective: 1200, scale: 1.02
     });
 

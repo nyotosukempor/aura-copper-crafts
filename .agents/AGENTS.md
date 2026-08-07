@@ -92,6 +92,8 @@ Gunakan skill berikut sesuai tugas yang diminta:
 6. **Colors**: Wajib gunakan CSS custom properties dari design system, bukan hardcode hex
 7. **Animations**: Gunakan library yang sudah terpasang — jangan install library baru tanpa kebutuhan
 8. **WhatsApp**: Nomor WA di semua file harus konsisten. Default: `+6281234567890`
+9. **Tailwind & Interaktivitas**: Ketika mengubah visibilitas elemen yang menggunakan kelas Tailwind `hidden`, pastikan aturan CSS override menggunakan `display: flex !important` atau toggle kelas `hidden`/`flex` langsung via JS.
+10. **Penggantian Template**: Ketika memperbarui template HTML (misal dari Stitch), segera perbarui selector DOM pada event listener di `app.js` agar selaras dengan ID/kelas elemen baru.
 
 ---
 

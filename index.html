@@ -26,11 +26,75 @@
     <meta property="twitter:description" content="Karya seni tempa tembaga murni 99.9% dan kuningan impor kelas A langsung dari pusat pengrajin Tumang, Boyolali.">
     <meta property="twitter:image" content="assets/products/prod-01.jpg">
 
-    <!-- Google Fonts: Cormorant Garamond, Playfair Display, Plus Jakarta Sans, Outfit -->
+    <!-- Material Symbols & Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "brass-glow": "rgba(245, 158, 11, 0.3)",
+                        "secondary": "#ffb95f",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary-fixed": "#ede3b8",
+                        "champagne-glint": "#E89D6C",
+                        "surface-dim": "#131317",
+                        "background": "#0D0D11",
+                        "surface-container": "#1f1f23",
+                        "surface-container-highest": "#353439",
+                        "outline-variant": "#524439",
+                        "primary-fixed": "#ffdcc2",
+                        "surface-variant": "#353439",
+                        "primary-container": "#c8803f",
+                        "surface-container-lowest": "#0e0e12",
+                        "surface": "#131317",
+                        "on-surface-variant": "#d8c3b4",
+                        "surface-container-high": "#2a292e",
+                        "tertiary": "#d1c79d",
+                        "surface-container-low": "#1b1b1f",
+                        "charcoal-muted": "#1A1A1F",
+                        "on-background": "#e4e1e7",
+                        "copper-deep": "#7C2D12",
+                        "outline": "#a08d80",
+                        "primary": "#ffb77b",
+                        "on-surface": "#e4e1e7",
+                        "on-primary": "#4d2700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding-sm": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "section-padding-lg": "120px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Outfit"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Outfit"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -92,40 +156,27 @@
     <div class="bg-ambient-glow glow-2"></div>
     <div class="bg-ambient-glow glow-3"></div>
 
-    <!-- Header & Navigation Bar -->
-    <header id="main-header" class="site-header">
-        <div class="container header-container">
-            <a href="#hero" class="brand-logo" aria-label="Aura Copper Home">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-hammer"></i>
-                </div>
-                <div class="logo-text">
-                    <span class="brand-name">AURA<span class="highlight">COPPER</span></span>
-                    <span class="brand-sub">LUXURY HANDCRAFTED METALS</span>
-                </div>
+    <!-- Header & Navigation Bar (Stitch Modern Heritage) -->
+    <header id="main-header" class="bg-background/80 backdrop-blur-xl border-b border-outline-variant/20 fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="flex justify-between items-center px-gutter py-base max-w-container-max mx-auto h-20">
+            <a class="font-display-lg text-headline-md tracking-tighter text-primary font-serif font-semibold text-2xl md:text-3xl" href="#hero">
+                Aura Copper & Brass
             </a>
-
-            <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
-                <ul>
-                    <li><a href="#hero" class="nav-link active">Beranda</a></li>
-                    <li><a href="#customizer" class="nav-link">Studio Customizer</a></li>
-                    <li><a href="#calculator" class="nav-link">Form Custom Order</a></li>
-                    <li><a href="#katalog" class="nav-link">Katalog Produk</a></li>
-                    <li><a href="#galeri" class="nav-link">Galeri Portfolio</a></li>
-                    <li><a href="#proses" class="nav-link">Proses Tempa</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                </ul>
+            <nav class="hidden md:flex gap-8" id="main-nav">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 nav-link active" href="#studio">Studio</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 nav-link" href="#katalog">Catalog</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 nav-link" href="#proses">Process</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 nav-link" href="#calculator">Bespoke</a>
             </nav>
-
-            <div class="header-actions">
-                <a href="#calculator" class="btn btn-secondary btn-sm nav-btn-custom">
-                    <i class="fa-solid fa-ruler-combined"></i> Spesifikasi Custom
+            <div class="flex items-center gap-4">
+                <button class="text-on-surface-variant hover:text-secondary transition-all duration-300 p-2 rounded-full hover:bg-surface-container" id="btn-header-cart" aria-label="Shopping Bag / Katalog Produk">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                </button>
+                <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20konsultasi%20kerajinan%20tembaga" target="_blank" rel="noopener" class="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full copper-gradient text-on-primary font-label-md text-label-md hover:opacity-90 transition-opacity font-medium">
+                    Inquire
                 </a>
-                <a href="https://wa.me/6281332804773?text=Halo%20Admin%20Aura%20Copper,%20saya%20tertarik%20konsultasi%20kerajinan%20tembaga" target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-wa" aria-label="Chat WhatsApp">
-                    <i class="fa-brands fa-whatsapp"></i> <span class="wa-btn-text">Chat WhatsApp</span>
-                </a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Mobile Navigation">
-                    <i class="fa-solid fa-bars"></i>
+                <button class="md:hidden text-on-surface-variant p-2" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
@@ -133,262 +184,87 @@
     <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
 
     <!-- Main Content -->
-    <main>
+    <main class="flex-grow pt-20">
 
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <canvas id="particle-canvas"></canvas>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="badge-pill">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text">Direct Manufacturer Boyolali • Pure Copper 99.9%</span>
-                    </div>
-                    <h1 class="hero-title">
-                        Seni Tempa Logam Murni <br>
-                        <span class="text-gradient">Tembaga & Kuningan</span> High-End
-                    </h1>
-                    <p class="hero-description">
-                        Mewujudkan karya seni arsitektur dan interior kelas dunia dari lembaran tembaga & kuningan murni. Melayani Bak Mandi Tembaga, Chandelier Masjid Nabawi, Relief Dinding Kustom, hingga Kubah Logam berstandar ekspor.
-                    </p>
-                    
-                    <div class="hero-cta-group">
-                        <a href="#customizer" class="btn btn-primary btn-lg">
-                            <i class="fa-solid fa-camera"></i> Live Photo Studio Customizer
-                        </a>
-                        <a href="#katalog" class="btn btn-outline btn-lg">
-                            <i class="fa-solid fa-images"></i> Jelajahi Katalog
-                        </a>
-                    </div>
-
-                    <div class="hero-metrics">
-                        <div class="metric-item">
-                            <div><span class="metric-number" data-target="15">0</span><span class="metric-plus">+</span></div>
-                            <span class="metric-label">Tahun Pengalaman</span>
-                        </div>
-                        <div class="metric-divider"></div>
-                        <div class="metric-item">
-                            <div><span class="metric-number" data-target="1200">0</span><span class="metric-plus">+</span></div>
-                            <span class="metric-label">Proyek Selesai</span>
-                        </div>
-                        <div class="metric-divider"></div>
-                        <div class="metric-item">
-                            <div><span class="metric-number" data-target="100">0</span><span class="metric-plus">%</span></div>
-                            <span class="metric-label">Tembaga Murni</span>
-                        </div>
-                    </div>
+        <!-- Hero Section (Stitch Exact Layout) -->
+        <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-section-padding-sm md:py-section-padding-lg">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center opacity-40 mix-blend-overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByGSlaM7nZsQoKjo4MYkulhwZ1vrBmkvD5KntZUS22_BcNUGTJa4QxJsynFuQRQjIGKshVZ4EP-2u5aNh3Amze_6CzyZSZ59dGB-JECAHzhc7Cyrj624TuxXykVNJrYTZHlBKBT7DcAhF-RI6yFHTDMZWrUVgNL3i99GJYs7ULpoal4MmsHnVQG5jCHKvX4a-XJ_dDwYtASeNK6Y_4P9ydLGe4foLRg6d1nP3oN8DEZQMDlKtVh2-y')"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center flex flex-col items-center">
+                <span class="font-label-caps text-label-caps text-secondary tracking-widest mb-6 uppercase">AURA COPPER & BRASS</span>
+                <h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-8 max-w-4xl leading-tight font-serif text-4xl md:text-6xl font-semibold">
+                    Seni Tempa Logam Murni Tembaga & Kuningan High-End
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Pusat Pengrajin Tembaga & Kuningan Boyolali. Mewujudkan mahakarya kustom dari logam murni untuk hunian, hotel, dan ruang komersial premium dengan sentuhan tangan ahli lokal.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#katalog" class="inline-flex items-center justify-center px-8 py-4 rounded-full copper-gradient text-on-primary font-label-md text-label-md hover:opacity-90 transition-all font-semibold shadow-lg">
+                        Eksplorasi Katalog
+                    </a>
+                    <a href="#calculator" class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-secondary text-secondary font-label-md text-label-md hover:bg-secondary/10 transition-all font-semibold">
+                        Konsultasi Kustom
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <div class="hero-visual">
-                    <div class="hero-card-glow"></div>
-                    <div class="hero-craft-showcase glass-card">
-                        <span class="craft-badge">Featured Craftsmanship</span>
-                        <div class="visual-svg-wrapper" id="hero-svg-container">
-                            <svg viewBox="0 0 500 380" class="hero-svg-bathtub" id="hero-interactive-svg" aria-label="Copper Bathtub Render">
-                                <defs>
-                                    <linearGradient id="copGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#f59e0b"/>
-                                        <stop offset="35%" stop-color="#d97736"/>
-                                        <stop offset="70%" stop-color="#b85d1c"/>
-                                        <stop offset="100%" stop-color="#54230c"/>
-                                    </linearGradient>
-                                    <linearGradient id="innerCop" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#fef3c7"/>
-                                        <stop offset="40%" stop-color="#e89d6c"/>
-                                        <stop offset="100%" stop-color="#7c2d12"/>
-                                    </linearGradient>
-                                    <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
-                                        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/>
-                                        <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
-                                    </radialGradient>
-                                    <pattern id="hammerPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                                        <circle cx="5" cy="5" r="2.5" fill="#3c1505" opacity="0.35"/>
-                                        <circle cx="15" cy="15" r="2.5" fill="#3c1505" opacity="0.35"/>
-                                        <circle cx="15" cy="5" r="1.5" fill="#fef3c7" opacity="0.25"/>
-                                        <circle cx="5" cy="15" r="1.5" fill="#fef3c7" opacity="0.25"/>
-                                    </pattern>
-                                </defs>
-                                
-                                <ellipse cx="250" cy="330" rx="190" ry="25" fill="url(#glowG)"/>
-                                <path d="M120 300 L110 330 M380 300 L390 330" stroke="#d97736" stroke-width="8" stroke-linecap="round"/>
-                                <path d="M60 160 C50 250, 110 300, 250 300 C390 300, 450 250, 440 160 C440 160, 420 220, 250 220 C80 220, 60 160, 60 160 Z" fill="url(#copGrad)"/>
-                                <path d="M60 160 C50 250, 110 300, 250 300 C390 300, 450 250, 440 160 C440 160, 420 220, 250 220 C80 220, 60 160, 60 160 Z" fill="url(#hammerPattern)"/>
-                                <ellipse cx="250" cy="160" rx="190" ry="40" fill="url(#copGrad)" stroke="#fef3c7" stroke-width="2"/>
-                                <ellipse cx="250" cy="165" rx="175" ry="32" fill="url(#innerCop)"/>
-                                <ellipse cx="250" cy="170" rx="150" ry="22" fill="#0d0d11" opacity="0.4"/>
-                                <path d="M100 160 Q 250 200 400 160" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
-                            </svg>
+        <div class="copper-divider"></div>
+
+        <!-- Studio Section (Stitch Material & Finishing Exact Layout) -->
+        <section class="py-section-padding-sm md:py-section-padding-lg relative" id="studio">
+            <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brass-glow rounded-full blur-[100px] -z-10 opacity-50"></div>
+            <div class="max-w-container-max mx-auto px-gutter">
+                <div class="text-center mb-16">
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-4 font-serif text-3xl md:text-5xl font-semibold">Material & Finishing</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Visualisasikan kombinasi material dan tekstur untuk proyek Anda.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Preview Area -->
+                    <div class="glass-card rounded-xl p-8 aspect-square flex items-center justify-center relative overflow-hidden tilt-effect group min-h-[420px]">
+                        <div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700" style="background-image: url('assets/products/studio_preview_copper_bowl.jpg')"></div>
+                        <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-lg flex justify-between items-center z-10">
+                            <div>
+                                <span class="block font-label-caps text-label-caps text-secondary mb-1 text-xs">Preview</span>
+                                <span class="font-body-md text-body-md text-on-surface font-semibold text-sm md:text-base">Tembaga - Polos Mulus</span>
+                            </div>
+                            <span class="material-symbols-outlined text-secondary">360</span>
                         </div>
-                        <div class="visual-caption">
-                            <span class="caption-title">Copper Bathtub Roll-Top Hammered</span>
-                            <span class="caption-desc">Ukuran Custom • Finis Patina Tempa Tangan</span>
+                    </div>
+                    <!-- Selection Tools -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider text-xs font-semibold">Material Dasar</h3>
+                            <div class="flex gap-4">
+                                <button class="px-6 py-3 rounded-full bg-primary/20 border border-primary text-primary font-label-md text-label-md transition-all font-medium">Tembaga</button>
+                                <button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all font-medium">Kuningan</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider text-xs font-semibold">Tekstur Permukaan</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <button class="glass-panel p-4 rounded-lg text-left hover:border-primary transition-colors border-primary">
+                                    <span class="block font-body-md text-body-md text-on-surface mb-1 font-semibold">Polos Mulus</span>
+                                    <span class="text-xs text-on-surface-variant">Elegan & Modern</span>
+                                </button>
+                                <button class="glass-panel p-4 rounded-lg text-left hover:border-primary transition-colors">
+                                    <span class="block font-body-md text-body-md text-on-surface mb-1 font-semibold">Babat Acak</span>
+                                    <span class="text-xs text-on-surface-variant">Karakter Alami</span>
+                                </button>
+                                <button class="glass-panel p-4 rounded-lg text-left hover:border-primary transition-colors sm:col-span-2">
+                                    <span class="block font-body-md text-body-md text-on-surface mb-1 font-semibold">Babat Teratur</span>
+                                    <span class="text-xs text-on-surface-variant">Geometris Klasik</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Studio Kustomizer Section with Real Photo Preview -->
-        <section id="customizer" class="section customizer-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-subtitle">REAL PHOTO SIMULATION STUDIO</span>
-                    <h2 class="section-title">Kustomisasi Foto Asli Produk & Finishing</h2>
-                    <p class="section-description">
-                        Pilih jenis produk, kombinasi material, finishing patina, serta tekstur tempa manual untuk melihat galeri foto asli produk secara interaktif dan dinamis.
-                    </p>
-                </div>
-
-                <div class="customizer-grid">
-                    <!-- Left Control Panel -->
-                    <div class="customizer-panel glass-card">
-                        <h3 class="panel-title"><i class="fa-solid fa-sliders text-copper"></i> Panel Kontrol Material & Produk</h3>
-                        
-                        <!-- 7 Expanded Product Categories -->
-                        <div class="control-group">
-                            <label class="control-label">1. Kategori Produk Kerajinan (7 Pilihan):</label>
-                            <div class="product-selector-grid">
-                                <button class="btn-select-product active" data-product="bathtub">
-                                    <i class="fa-solid fa-bath"></i> Bak Mandi
-                                </button>
-                                <button class="btn-select-product" data-product="chandelier">
-                                    <i class="fa-solid fa-lightbulb"></i> Chandelier
-                                </button>
-                                <button class="btn-select-product" data-product="sink">
-                                    <i class="fa-solid fa-sink"></i> Wastafel
-                                </button>
-                                <button class="btn-select-product" data-product="relief">
-                                    <i class="fa-solid fa-gem"></i> Relief Dinding
-                                </button>
-                                <button class="btn-select-product" data-product="dome">
-                                    <i class="fa-solid fa-mosque"></i> Kubah Masjid
-                                </button>
-                                <button class="btn-select-product" data-product="table">
-                                    <i class="fa-solid fa-table"></i> Meja Furniture
-                                </button>
-                                <button class="btn-select-product" data-product="vase">
-                                    <i class="fa-solid fa-wine-glass"></i> Vas & Decor
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Metal Material Type (4 Options: Tembaga, Kuningan, Perunggu, Dual-Tone) -->
-                        <div class="control-group">
-                            <label class="control-label">2. Pilih Jenis Logam:</label>
-                            <div class="material-options">
-                                <label class="radio-card active">
-                                    <input type="radio" name="material" value="copper" checked>
-                                    <span class="radio-content">
-                                        <span class="color-swatch swatch-copper"></span>
-                                        <span class="swatch-name">Tembaga Murni 99.9%</span>
-                                    </span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="material" value="brass">
-                                    <span class="radio-content">
-                                        <span class="color-swatch swatch-brass"></span>
-                                        <span class="swatch-name">Kuningan Grade A</span>
-                                    </span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="material" value="bronze">
-                                    <span class="radio-content">
-                                        <span class="color-swatch swatch-bronze"></span>
-                                        <span class="swatch-name">Perunggu (Bronze)</span>
-                                    </span>
-                                </label>
-                                <label class="radio-card">
-                                    <input type="radio" name="material" value="dual">
-                                    <span class="radio-content">
-                                        <span class="color-swatch swatch-dual"></span>
-                                        <span class="swatch-name">Dual-Tone Kombinasi</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- 5 Finishing Options -->
-                        <div class="control-group">
-                            <label class="control-label">3. Finishing Warna Logam (5 Pilihan):</label>
-                            <div class="finish-swatches-grid">
-                                <button class="swatch-btn active" data-finish="polished" title="Polished Shiny Mirror">
-                                    <span class="swatch-circle finish-polished"></span>
-                                    <span class="swatch-label">Polished Shiny</span>
-                                </button>
-                                <button class="swatch-btn" data-finish="antique" title="Antique Patina / Burnished Black">
-                                    <span class="swatch-circle finish-antique"></span>
-                                    <span class="swatch-label">Antique Patina</span>
-                                </button>
-                                <button class="swatch-btn" data-finish="green" title="Green Oxidation Patina">
-                                    <span class="swatch-circle finish-green"></span>
-                                    <span class="swatch-label">Green Oxidation</span>
-                                </button>
-                                <button class="swatch-btn" data-finish="satin" title="Brushed Satin Matt">
-                                    <span class="swatch-circle finish-satin"></span>
-                                    <span class="swatch-label">Brushed Satin</span>
-                                </button>
-                                <button class="swatch-btn" data-finish="raw" title="Raw Natural Untreated">
-                                    <span class="swatch-circle finish-raw"></span>
-                                    <span class="swatch-label">Raw Natural</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 4 Surface Texture Options -->
-                        <div class="control-group">
-                            <label class="control-label">4. Tekstur Permukaan Tempa (4 Pilihan):</label>
-                            <div class="texture-btn-group">
-                                <button class="btn-texture active" data-texture="hammered">
-                                    <i class="fa-solid fa-circle-dot"></i> Hammered Dot (Bintik)
-                                </button>
-                                <button class="btn-texture" data-texture="smooth">
-                                    <i class="fa-solid fa-sparkles"></i> Smooth Mirror (Polos)
-                                </button>
-                                <button class="btn-texture" data-texture="etched">
-                                    <i class="fa-solid fa-feather"></i> Etched Pattern (Ukir)
-                                </button>
-                                <button class="btn-texture" data-texture="chiseled">
-                                    <i class="fa-solid fa-lines-leaning"></i> Chiseled Lines (Pahat)
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Right Real Photo Viewer Stage -->
-                    <div class="customizer-viewer glass-card">
-                        <div class="viewer-header">
-                            <div class="live-status">
-                                <span class="pulse-dot"></span> REAL PRODUCT PHOTO SIMULATION
-                            </div>
-                            <button id="reset-customizer" class="btn-icon-link"><i class="fa-solid fa-rotate-left"></i> Reset Studio</button>
-                        </div>
-
-                        <div class="viewer-stage" id="viewer-stage">
-                            <!-- Real Photo Viewer Container with Crossfade Image -->
-                            <div class="real-photo-viewer" id="real-photo-viewer">
-                                <div class="photo-overlay-tag" id="photo-overlay-tag">
-                                    <i class="fa-solid fa-camera"></i> Foto Produk Asli Boyolali
-                                </div>
-                                <img id="customizer-real-img" src="assets/products/prod-04.jpg" alt="Real Photo Customizer Preview" class="real-photo-img" loading="eager" decoding="async">
-                            </div>
-                        </div>
-
-                        <div class="viewer-spec-summary">
-                            <div class="spec-badge-list">
-                                <span class="spec-tag" id="spec-tag-product">Produk: Bak Mandi Tembaga</span>
-                                <span class="spec-tag" id="spec-tag-material">Bahan: Tembaga Murni 99.9%</span>
-                                <span class="spec-tag" id="spec-tag-finish">Finish: Polished Shiny</span>
-                                <span class="spec-tag" id="spec-tag-texture">Tekstur: Hammered Dot</span>
-                            </div>
-                            <button id="btn-apply-customizer" class="btn btn-primary btn-block">
-                                <i class="fa-brands fa-whatsapp"></i> Pesan / Minta Penawaran Spesifikasi Ini via WA
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="copper-divider"></div>
 
         <!-- Form Spesifikasi & Penawaran Custom Order -->
         <section id="calculator" class="section calculator-section">
@@ -457,6 +333,38 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <!-- File Upload Custom Design Dropzone -->
+                                <div class="form-group margin-top-md">
+                                    <label for="calc-file-upload" class="form-label">
+                                        <i class="fa-solid fa-cloud-arrow-up text-copper"></i> Upload File Desain / Sketsa Custom (Opsional)
+                                    </label>
+                                    <div class="file-upload-dropzone" id="file-dropzone">
+                                        <input type="file" id="calc-file-upload" class="file-upload-input" accept=".jpg,.jpeg,.png,.webp,.pdf,.dwg,.dxf,.ai,.zip,.rar">
+                                        <div class="dropzone-content" id="dropzone-content">
+                                            <div class="dropzone-icon">
+                                                <i class="fa-solid fa-file-circle-plus"></i>
+                                            </div>
+                                            <p class="dropzone-text"><strong>Klik untuk pilih file</strong> atau seret file ke sini</p>
+                                            <p class="dropzone-hint">Format diizinkan: JPG, PNG, WEBP, PDF, DWG, DXF, AI, ZIP/RAR (Maks. 10 MB)</p>
+                                        </div>
+                                        <div class="file-preview-card hidden" id="file-preview-card">
+                                            <div class="file-info-icon" id="file-type-icon">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </div>
+                                            <div class="file-details">
+                                                <span class="file-name" id="file-name-display">desain-kubah.pdf</span>
+                                                <span class="file-size" id="file-size-display">2.4 MB</span>
+                                            </div>
+                                            <button type="button" class="btn-remove-file" id="btn-remove-file" aria-label="Hapus file lampiran">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-feedback hidden" id="file-upload-error">
+                                        <i class="fa-solid fa-triangle-exclamation"></i> <span id="file-error-msg">Format file tidak diizinkan!</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Right Column: Technical Specs & Official Quotation Box -->
@@ -491,6 +399,8 @@
                 </div>
             </div>
         </section>
+
+        <div class="copper-divider"></div>
 
         <!-- Katalog Produk Interaktif -->
         <section id="katalog" class="section catalog-section">
@@ -567,6 +477,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="copper-divider"></div>
 
         <!-- Interactive Crafting Process Section -->
         <section id="proses" class="section process-section">
@@ -688,6 +600,8 @@
             </div>
         </section>
 
+        <div class="copper-divider"></div>
+
         <!-- FAQ Section -->
         <section id="faq" class="section faq-section">
             <div class="container">
@@ -740,17 +654,23 @@
             </div>
         </section>
 
-        <!-- CTA Callout Banner -->
-        <section class="cta-banner-section">
-            <div class="container">
-                <div class="cta-banner-card glass-card">
-                    <h2 class="cta-title">Siap Wujudkan Kerajinan Tembaga Impian Anda?</h2>
-                    <p class="cta-desc">Konsultasikan ide desain, dimensi, dan spesifikasi pesanan Anda secara gratis bersama master pengrajin kami sekarang.</p>
-                    <div class="cta-btn-wrapper">
-                        <a href="https://wa.me/6281332804773?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20desain%20dan%20penawaran%20harga%20kerajinan%20tembaga" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis via WhatsApp
+        <!-- CTA Callout Banner (Luxury Modern Heritage System) -->
+        <section class="cta-banner-section relative py-16">
+            <div class="copper-divider mb-16"></div>
+            <div class="container mx-auto px-4">
+                <div class="cta-banner-card glass-card tilt-effect p-8 md:p-14 rounded-3xl border border-primary/30 relative overflow-hidden text-center flex flex-col items-center">
+                    <span class="font-label-caps text-xs text-secondary mb-3 tracking-widest uppercase font-semibold">KONSULTASI & CUSTOM ORDER BOYOLALI</span>
+                    <h2 class="cta-title font-serif text-3xl md:text-5xl font-semibold text-on-surface mb-4 max-w-3xl leading-tight">
+                        Siap Wujudkan <span class="text-gradient copper-gradient bg-clip-text text-transparent">Kerajinan Tembaga</span> Impian Anda?
+                    </h2>
+                    <p class="cta-desc font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
+                        Konsultasikan ide desain, dimensi, dan spesifikasi pesanan Anda secara gratis bersama master pengrajin kami sekarang.
+                    </p>
+                    <div class="cta-btn-wrapper flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md sm:max-w-none">
+                        <a href="https://wa.me/6281332804773?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20desain%20dan%20penawaran%20harga%20kerajinan%20tembaga" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-wa inline-flex items-center justify-center px-8 py-4 rounded-full copper-gradient text-on-primary font-semibold text-base hover:opacity-90 transition-all shadow-lg hover:shadow-copper-lg gap-2 w-full sm:w-auto">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Konsultasi Gratis via WhatsApp
                         </a>
-                        <a href="#calculator" class="btn btn-secondary btn-lg">
+                        <a href="#calculator" class="btn btn-secondary btn-lg inline-flex items-center justify-center px-8 py-4 rounded-full border border-secondary text-secondary font-semibold text-base hover:bg-secondary/10 transition-all gap-2 w-full sm:w-auto">
                             <i class="fa-solid fa-ruler-combined"></i> Buka Form Spesifikasi Custom
                         </a>
                     </div>
@@ -760,64 +680,18 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-col footer-brand">
-                <a href="#hero" class="brand-logo">
-                    <div class="logo-icon"><i class="fa-solid fa-hammer"></i></div>
-                    <div class="logo-text">
-                        <span class="brand-name">AURA<span class="highlight">COPPER</span></span>
-                    </div>
-                </a>
-                <p class="footer-about">
-                    Pusat kerajinan logam tembaga & kuningan berkualitas tinggi dari Tumang, Cepogo, Boyolali, Jawa Tengah. Berpengalaman melayani proyek nasional & ekspor.
-                </p>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Navigasi Cepat</h4>
-                <ul class="footer-links">
-                    <li><a href="#customizer">Studio Customizer</a></li>
-                    <li><a href="#calculator">Form Custom Order</a></li>
-                    <li><a href="#katalog">Katalog Produk</a></li>
-                    <li><a href="#proses">Tahap Pembuatan</a></li>
-                    <li><a href="#faq">Pertanyaan FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Kategori Produk</h4>
-                <ul class="footer-links">
-                    <li><a href="#katalog">Bak Mandi Tembaga</a></li>
-                    <li><a href="#katalog">Lampu Chandelier Masjid</a></li>
-                    <li><a href="#katalog">Relief & Kaligrafi Ukir</a></li>
-                    <li><a href="#katalog">Kubah Masjid Logam</a></li>
-                    <li><a href="#katalog">Wastafel & Decor</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-heading">Workshop & Kontak</h4>
-                <ul class="footer-contact-info">
-                    <li><i class="fa-solid fa-location-dot text-copper"></i> Tumang, Cepogo, Kabupaten Boyolali, Jawa Tengah 57362</li>
-                    <li><i class="fa-solid fa-phone text-copper"></i> <a href="tel:+6281332804773" style="color:inherit;">+62 813-3280-4773</a></li>
-                    <li><i class="fa-brands fa-whatsapp text-copper"></i> <a href="https://wa.me/6281332804773" target="_blank" rel="noopener" style="color:inherit;">+62 813-3280-4773</a></li>
-                    <li><i class="fa-solid fa-envelope text-copper"></i> <a href="mailto:nyotowarna@gmail.com" style="color:inherit;">nyotowarna@gmail.com</a></li>
-                    <li><i class="fa-solid fa-clock text-copper"></i> Senin - Sabtu: 08:00 - 17:00 WIB</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container footer-bottom-content">
-                <p>&copy; 2026 Aura Copper & Brass Crafts. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
+    <!-- Footer (Stitch Exact Layout) -->
+    <footer class="bg-surface-container-lowest w-full py-section-padding-sm border-t border-outline-variant/10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8 py-10">
+            <span class="font-headline-lg text-headline-lg text-primary text-center md:text-left text-2xl md:text-4xl font-serif font-semibold">Aura Copper & Brass</span>
+            <nav class="flex flex-wrap justify-center gap-6">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-champagne-glint transition-colors" href="#">Privacy Policy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-champagne-glint transition-colors" href="#">Shipping & Returns</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-champagne-glint transition-colors" href="#">Contact Studio</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-champagne-glint transition-colors" href="#">Artisan Directory</a>
+            </nav>
+            <div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right text-sm">
+                © 2024 Aura Copper & Brass. Modern Heritage Defined.
             </div>
         </div>
     </footer>
